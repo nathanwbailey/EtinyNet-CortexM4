@@ -1,8 +1,8 @@
-# EtinyNet on Arduino Nano 33 BLE Sense Rev 2
+# EtinyNet-0.75 on Arduino Nano 33 BLE Sense Rev 2
 
 ### What is this project?
 
-This project implements a EtinyNet (https://ojs.aaai.org/index.php/AAAI/article/view/20387) for Tiny ImageNet-200. 
+This project implements the EtinyNet-0.75 CNN (https://ojs.aaai.org/index.php/AAAI/article/view/20387) for Tiny ImageNet-200. 
 
 This is implemented in Keras and then converted to TFLite. Then it is deployed using TfLite-Micro on an Arduino Nano 33 BLE Sense Rev 2 which has a Cortex-M4F Microcontroller.
 
