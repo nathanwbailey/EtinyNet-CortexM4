@@ -27,6 +27,7 @@ train_dataset = keras.preprocessing.image_dataset_from_directory(
     seed=123,
 )
 
+
 num_train_classes = len(train_dataset.class_names)
 
 rescale_layer = keras.layers.Rescaling(1./255)
@@ -49,7 +50,7 @@ print(f'Number of Validation Classes: {len(valid_dataset.class_names)}')
 
 augment_layer = keras.layers.RandomFlip('horizontal')
 norm_layer = keras.layers.Normalization()
-norm_layer.adapt(rescaled_train_dataset_data)
+norm_layer.adapt(rescaled_train_dataset_data.rebatch(1).take(100))
 
 train_dataset = train_dataset.map(lambda x, y: (augment_layer(x), y))
 train_dataset = train_dataset.map(lambda x, y: (rescale_layer(x), y))
@@ -59,6 +60,7 @@ valid_dataset = valid_dataset.map(lambda x, y: (rescale_layer(x), y))
 valid_dataset = valid_dataset.map(lambda x, y: (norm_layer(x), y))
 
 normalized_train_dataset_data = rescaled_train_dataset_data.map(lambda x: norm_layer(x)) # pylint: disable=unnecessary-lambda
+
 
 # ------------------------------------- #
 # -- Create the Classification Model -- #
@@ -123,10 +125,9 @@ model.save('etinynet')
 # ----------------------- #
 # -- Convert to TFLite -- #
 # ----------------------- #
-train_dataset_data = normalized_train_dataset_data.unbatch()
 def representative_dataset_function() -> Generator[list, None, None]:
     """Create a representative dataset for TFLite Conversion."""
-    for input_value in train_dataset_data.batch(1).take(100):
+    for input_value in normalized_train_dataset_data.rebatch(1).take(100):
         i_value_fp32 = tf.cast(input_value, tf.float32)
         yield [i_value_fp32]
 
@@ -144,3 +145,82 @@ with open("etinynet_int8.tflite", "wb") as f:
 
 tflite_model_kb_size = os.path.getsize("etinynet_int8.tflite") / 1024
 print(tflite_model_kb_size)
+
+
+# --------------------------- #
+# -- Evaluate TFLite Model -- #
+# --------------------------- #
+tflite_interpreter = tf.lite.Interpreter(model_content = tflite_model)
+tflite_interpreter.allocate_tensors()
+
+input_details = tflite_interpreter.get_input_details()[0]
+output_details = tflite_interpreter.get_output_details()[0]
+
+input_quantization_details = input_details["quantization_parameters"]
+output_quantization_details = output_details["quantization_parameters"]
+input_quant_scale = input_quantization_details['scales'][0]
+output_quant_scale = output_quantization_details['scales'][0]
+input_quant_zero_point = input_quantization_details['zero_points'][0]
+output_quant_zero_point = output_quantization_details['zero_points'][0]
+
+def classify_sample_tflite(interpreter: tf.lite.Interpreter, input_d: dict, output_d: dict, i_scale: np.float32, o_scale: np.float32, i_zero_point: np.int32, o_zero_point: np.int32, input_data: tf.Tensor) -> tf.Tensor:
+    """Classify an example in TFLite."""
+    input_data = tf.reshape(input_data, (1,224,224,3))
+    input_fp32 = tf.cast(input_data, tf.float32)
+    input_int8 = tf.cast((input_fp32 / i_scale) + i_zero_point, tf.int8)
+    interpreter.set_tensor(input_d["index"], input_int8)
+    interpreter.invoke()
+    output_int8 = interpreter.get_tensor(output_d["index"])[0]
+    output_fp32 = cast(tf.Tensor, tf.cast((output_int8 - o_zero_point) * o_scale, tf.float32))
+    return output_fp32
+
+num_correct_examples = 0
+num_examples = 0
+for i_value, o_value in valid_dataset.unbatch():
+    output = classify_sample_tflite(tflite_interpreter, input_details, output_details, input_quant_scale, output_quant_scale, input_quant_zero_point, output_quant_zero_point, i_value)
+    if tf.cast(tf.math.argmax(output), tf.int32) == o_value:
+        num_correct_examples += 1
+    num_examples += 1
+
+print(f'Accuracy: {num_correct_examples/num_examples}')
+
+
+# ------------------------- #
+# -- Prepare for Arduino -- #
+# ------------------------- #
+def array_to_str(data: np.ndarray) -> str:
+    """Convert numpy array of int8 values to comma seperated int values."""
+    num_cols = 10
+    val_string = ''
+    for i, val in enumerate(data):
+        val_string += str(val)
+        if (i+1) < len(data):
+            val_string += ','
+        if (i+1) % num_cols == 0:
+            val_string += '\n'
+    return val_string
+
+def generate_h_file(size: int, data: str, label: str) -> str:
+    """Generate a c header with the string numpy data."""
+    str_out = 'int8_t g_test[] = '
+    str_out += '\n{\n'
+    str_out += f'{data}'
+    str_out += '};\n'
+    str_out += f'const int g_test_len = {size};\n'
+    str_out += f'const int g_test_label = {label};\n'
+    return str_out
+
+
+filtered_valid_dataset = valid_dataset.unbatch().filter(lambda _, y: y == 115)
+
+c_code = ""
+for i_value, o_value in filtered_valid_dataset:
+    o_pred_fp32 = classify_sample_tflite(tflite_interpreter, input_details, output_details, input_quant_scale, output_quant_scale, input_quant_zero_point, output_quant_zero_point, i_value)
+    if tf.cast(tf.math.argmax(output), tf.int32) == o_value:
+        i_value_int8 = ((i_value / input_quant_scale) + input_quant_zero_point).astype(np.int8)
+        i_value_int8 = i_value_int8.ravel()
+        val_str = array_to_str(i_value_int8)
+        c_code = generate_h_file(i_value_int8.size, val_str, "6")
+
+with open('input_imagenet.h', 'w', encoding='utf-8') as file:
+    file.write(c_code)
