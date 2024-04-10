@@ -80,16 +80,19 @@ def classify_sample_tflite(interpreter: tf.lite.Interpreter, input_d: dict, outp
     interpreter.set_tensor(input_d["index"], input_int8)
     interpreter.invoke()
     output_int8 = interpreter.get_tensor(output_d["index"])[0]
-    output_fp32 = (output_int8 - o_zero_point) * o_scale
+    output_fp32 = tf.convert_to_tensor((output_int8 - o_zero_point) * o_scale, dtype=tf.float32)
     return output_fp32
 
 num_correct_examples = 0
 num_examples = 0
+num_correct_examples_top_5 = 0
 for i_value, o_value in valid_dataset.unbatch():
     output = classify_sample_tflite(tflite_interpreter, input_details, output_details, input_quant_scale, output_quant_scale, input_quant_zero_point, output_quant_zero_point, i_value)
     if tf.cast(tf.math.argmax(output), tf.int32) == o_value:
         num_correct_examples += 1
+    if tf.math.in_top_k(tf.expand_dims(o_value, axis=0), tf.expand_dims(output, axis=0), 5).numpy()[0]:
+        num_correct_examples_top_5 += 1
     num_examples += 1
 
-print(f'Accuracy: {num_correct_examples/num_examples}')
-
+print(f'Top-1 Accuracy: {num_correct_examples/num_examples}')
+print(f'Top-5 Accuracy: {num_correct_examples_top_5/num_examples}')
