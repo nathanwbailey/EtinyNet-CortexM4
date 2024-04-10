@@ -233,7 +233,7 @@ for i_value, o_value in filtered_valid_dataset:
         i_value_int8 = tf.cast(((i_value / input_quant_scale) + input_quant_zero_point), tf.int8).numpy()
         i_value_int8 = i_value_int8.ravel()
         val_str = array_to_str(i_value_int8)
-        c_code = generate_h_file(i_value_int8.size, val_str, "6")
+        c_code = generate_h_file(i_value_int8.size, val_str, "115")
 
 with open('input_imagenet.h', 'w', encoding='utf-8') as file:
     file.write(c_code)
