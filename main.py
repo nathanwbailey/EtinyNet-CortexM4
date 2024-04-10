@@ -229,8 +229,8 @@ filtered_valid_dataset = valid_dataset.unbatch().filter(lambda _, y: y == 115)
 c_code = ""
 for i_value, o_value in filtered_valid_dataset:
     o_pred_fp32 = classify_sample_tflite(tflite_interpreter, input_details, output_details, input_quant_scale, output_quant_scale, input_quant_zero_point, output_quant_zero_point, i_value)
-    if tf.cast(tf.math.argmax(output), tf.int32) == o_value:
-        i_value_int8 = ((i_value / input_quant_scale) + input_quant_zero_point).astype(np.int8)
+    if tf.cast(tf.math.argmax(o_pred_fp32), tf.int32) == o_value:
+        i_value_int8 = tf.cast(((i_value / input_quant_scale) + input_quant_zero_point), tf.int8).numpy()
         i_value_int8 = i_value_int8.ravel()
         val_str = array_to_str(i_value_int8)
         c_code = generate_h_file(i_value_int8.size, val_str, "6")
