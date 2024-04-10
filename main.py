@@ -92,7 +92,7 @@ model.summary(expand_nested=True)
 # -- Train the Classification Model -- #
 # ------------------------------------ #
 
-loss_function = keras.losses.SparseCategoricalCrossentropy(from_logits=False)
+loss_function = keras.losses.SparseCategoricalCrossentropy(from_logits=True)
 LEARNING_RATE = 0.1
 optimizer = keras.optimizers.SGD(learning_rate=LEARNING_RATE, momentum=0.9, weight_decay=1e-4)
 model.compile(optimizer=optimizer, loss=loss_function, metrics=[keras.metrics.SparseCategoricalAccuracy(name='Top-1 Accuracy'), keras.metrics.SparseTopKCategoricalAccuracy(k=5, name='Top-5 Accuracy')])
@@ -125,9 +125,19 @@ model.save('etinynet')
 # ----------------------- #
 # -- Convert to TFLite -- #
 # ----------------------- #
+#FP32 Model
+converter = tf.lite.TFLiteConverter.from_saved_model('etinynet')
+tflite_model = converter.convert()
+with open("etinynet.tflite", "wb") as f:
+    f.write(tflite_model) # type: ignore[reportAttributeAccessIssue]
+
+tflite_model_kb_size = os.path.getsize("etinynet.tflite") / 1024
+print(tflite_model_kb_size)
+
+#INT8 Model
 def representative_dataset_function() -> Generator[list, None, None]:
     """Create a representative dataset for TFLite Conversion."""
-    for input_value in normalized_train_dataset_data.rebatch(1).take(100):
+    for input_value in normalized_train_dataset_data.rebatch(1).take(1000):
         i_value_fp32 = tf.cast(input_value, tf.float32)
         yield [i_value_fp32]
 

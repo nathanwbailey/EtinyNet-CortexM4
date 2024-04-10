@@ -74,7 +74,7 @@ def create_etinynet_model(i_shape: tuple, block_info: list[dict], initial_in_cha
 
     out = keras.layers.GlobalAveragePooling2D()(out)
     out = keras.layers.Dropout(rate=0.4)(out)
-    out = keras.layers.Dense(units=output_units, activation='softmax')(out)
+    out = keras.layers.Dense(units=output_units)(out)
 
     model = keras.Model(inputs=input_data, outputs=out)
 
