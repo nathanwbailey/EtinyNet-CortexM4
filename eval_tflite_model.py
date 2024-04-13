@@ -15,7 +15,7 @@ train_dataset = keras.preprocessing.image_dataset_from_directory(
     labels='inferred',
     color_mode='rgb',
     batch_size=BATCH_SIZE,
-    image_size=(224,224),
+    image_size=(48,48),
     interpolation="bilinear",
     shuffle=True,
     seed=123,
@@ -35,7 +35,7 @@ valid_dataset = keras.preprocessing.image_dataset_from_directory(
     labels='inferred',
     color_mode='rgb',
     batch_size=BATCH_SIZE,
-    image_size=(224,224),
+    image_size=(48,48),
     interpolation="bilinear",
     shuffle=False,
 )
@@ -74,7 +74,7 @@ output_quant_zero_point = output_quantization_details['zero_points'][0]
 
 def classify_sample_tflite(interpreter: tf.lite.Interpreter, input_d: dict, output_d: dict, i_scale: np.float32, o_scale: np.float32, i_zero_point: np.int32, o_zero_point: np.int32, input_data: tf.Tensor) -> tf.Tensor:
     """Classify an example in TFLite."""
-    input_data = tf.reshape(input_data, (1,224,224,3))
+    input_data = tf.reshape(input_data, (1,48,48,3))
     input_fp32 = tf.cast(input_data, tf.float32)
     input_int8 = tf.cast(((input_fp32 / i_scale) + i_zero_point), tf.int8)
     interpreter.set_tensor(input_d["index"], input_int8)

@@ -25,7 +25,7 @@ All pip packages needed can be found in requirements.txt
 3. Run the python file: python3 main.py
 4. Convert the tflite model to a C header:
     * apt-get install xxd
-    * xxd -i cifar10.tflite > model.h 
+    * xxd -i etinynet_int8.tflite > model.h 
     * sed -i 's/unsigned char/const unsigned char/g' model.h
     * sed -i 's/const/alignas(8) const/g' model.h
 5. Run the arduino C file

@@ -1,6 +1,5 @@
 """Main file for training/converting the model."""
 from typing import Generator
-from typing import cast
 import tensorflow as tf # type: ignore[import-untyped]
 from tensorflow import keras # type: ignore[reportAttributeAccessIssue,import-untyped] # pylint: disable=no-member,import-error,no-name-in-module
 import os
@@ -16,7 +15,7 @@ train_dataset = keras.preprocessing.image_dataset_from_directory(
     labels='inferred',
     color_mode='rgb',
     batch_size=BATCH_SIZE,
-    image_size=(224,224),
+    image_size=(48,48),
     interpolation="bilinear",
     shuffle=True,
     seed=123,
@@ -36,7 +35,7 @@ valid_dataset = keras.preprocessing.image_dataset_from_directory(
     labels='inferred',
     color_mode='rgb',
     batch_size=BATCH_SIZE,
-    image_size=(224,224),
+    image_size=(48,48),
     interpolation="bilinear",
     shuffle=False,
 )
