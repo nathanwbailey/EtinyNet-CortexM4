@@ -12,8 +12,8 @@ This is implemented in Keras and then converted to TFLite. Then it is deployed u
 
 ### Where is the code?
 
-main.py - Implements EtinyNet in Keras, converts it to tflite and outputs an image in a C header.
-cortex_program/cortex_program.ino - Runs EtinyNet on the Cortex-M4F, classifies the example outputted in the python file.
+* main.py - Implements EtinyNet in Keras, converts it to tflite and outputs an image in a C header.
+* cortex_program/cortex_program.ino - Runs EtinyNet on the Cortex-M4F, classifies the example outputted in the python file.
 
 
 ### Requirements
