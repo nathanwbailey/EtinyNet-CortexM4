@@ -45,8 +45,8 @@ def create_dataset(batch_size: int, image_size: tuple[int]) -> tuple[tf.data.Dat
     valid_dataset = valid_dataset.map(lambda x, y: (rescale_layer(x), y))
     valid_dataset = valid_dataset.map(lambda x, y: (norm_layer(x), y))
 
-    normalized_train_dataset_data = rescaled_train_dataset_data.map(lambda x: norm_layer(x)) # pylint: disable=unnecessary-lambda
-    return train_dataset, valid_dataset, normalized_train_dataset_data
+    normalized_train_data = rescaled_train_dataset_data.map(lambda x: norm_layer(x)) # pylint: disable=unnecessary-lambda
+    return train_dataset, valid_dataset, normalized_train_data
 
 def train_model(keras_model: keras.Model, learning_rate: float, t_dataset: tf.data.Dataset, v_dataset: tf.data.Dataset, epochs: int) -> keras.Model:
     """Compile and train the model."""
@@ -90,6 +90,11 @@ etinynet_block_info = [
     }
 ]
 
+
+# -------------------- #
+# -- Model Training -- #
+# -------------------- #
+
 BATCH_SIZE=128
 
 def train_model_input_size(spatial_image_size: tuple[int], input_model: keras.Model | None = None) -> keras.Model:
@@ -102,7 +107,7 @@ def train_model_input_size(spatial_image_size: tuple[int], input_model: keras.Mo
         new_model.set_weights(input_model.get_weights())
     new_model.summary(expand_nested=True)
 
-    new_model = train_model(keras_model=model, learning_rate=0.1, t_dataset=train_dataset, v_dataset=valid_dataset, epochs=1)
+    new_model = train_model(keras_model=new_model, learning_rate=0.1, t_dataset=train_dataset, v_dataset=valid_dataset, epochs=1)
     new_model.save('etinynet_'+str(spatial_image_size[0]))
     return new_model
 
@@ -119,6 +124,10 @@ baseline_model_loss, baseline_model_accuracy = model.evaluate(valid_dataset_q_aw
 
 print('Baseline test loss:', baseline_model_loss)
 print('Baseline test loss:', baseline_model_accuracy)
+
+# --------------------------------- #
+# -- Quantization Aware Training -- #
+# --------------------------------- #
 
 q_aware_model = tfmot.quantization.keras.quantize_model(model)
 q_aware_model = train_model(keras_model=model, learning_rate=0.1, t_dataset=train_dataset_q_aware, v_dataset=valid_dataset_q_aware, epochs=100)
