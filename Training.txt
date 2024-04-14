@@ -1,21 +1,21 @@
-2024-04-12 11:15:55.348299: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-2024-04-12 11:15:55.348384: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2024-04-12 11:15:55.349451: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-2024-04-12 11:15:55.355360: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2024-04-14 11:37:58.282030: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-04-14 11:37:58.282181: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-04-14 11:37:58.283367: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-04-14 11:37:58.289445: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-04-12 11:15:56.130340: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
-2024-04-12 11:15:56.790284: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2024-04-12 11:15:56.825983: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2024-04-12 11:15:56.826271: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:37:59.064018: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-04-14 11:37:59.724877: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:37:59.759408: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:37:59.759718: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
 Num GPUs Available:  1
 Found 100000 files belonging to 200 classes.
-2024-04-12 11:16:00.974390: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2024-04-12 11:16:00.974638: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2024-04-12 11:16:00.974828: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2024-04-12 11:16:01.069235: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2024-04-12 11:16:01.069520: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2024-04-12 11:16:01.069761: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
-2024-04-12 11:16:01.069921: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5491 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1
+2024-04-14 11:38:03.364112: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:38:03.364477: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:38:03.364754: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:38:03.452892: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:38:03.453220: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:38:03.453490: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 11:38:03.453704: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5484 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1
 Number of Training Classes: 200
 Found 10000 files belonging to 200 classes.
 Number of Validation Classes: 200
@@ -84,143 +84,185 @@ Trainable params: 326336 (1.24 MB)
 Non-trainable params: 8688 (33.94 KB)
 _________________________________________________________________
 Epoch 1/10000
-2024-04-12 11:16:18.580054: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
-2024-04-12 11:16:20.019370: I external/local_xla/xla/service/service.cc:168] XLA service 0x5652eb798600 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2024-04-12 11:16:20.019438: I external/local_xla/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce GTX 1060 6GB, Compute Capability 6.1
+2024-04-14 11:38:17.880491: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+2024-04-14 11:38:19.235413: I external/local_xla/xla/service/service.cc:168] XLA service 0x5618c1586b00 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-04-14 11:38:19.235653: I external/local_xla/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce GTX 1060 6GB, Compute Capability 6.1
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-I0000 00:00:1712916980.076381   94651 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
-782/782 - 41s - loss: 5.0758 - Top-1 Accuracy: 0.0209 - Top-5 Accuracy: 0.0852 - val_loss: 4.9444 - val_Top-1 Accuracy: 0.0291 - val_Top-5 Accuracy: 0.1183 - lr: 0.1000 - 41s/epoch - 53ms/step
+I0000 00:00:1713091099.292517  182335 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+782/782 - 41s - loss: 5.0669 - Top-1 Accuracy: 0.0199 - Top-5 Accuracy: 0.0857 - val_loss: 4.9241 - val_Top-1 Accuracy: 0.0319 - val_Top-5 Accuracy: 0.1258 - lr: 0.1000 - 41s/epoch - 53ms/step
 Epoch 2/10000
-782/782 - 27s - loss: 4.7784 - Top-1 Accuracy: 0.0406 - Top-5 Accuracy: 0.1479 - val_loss: 4.7536 - val_Top-1 Accuracy: 0.0448 - val_Top-5 Accuracy: 0.1545 - lr: 0.1000 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 4.7096 - Top-1 Accuracy: 0.0477 - Top-5 Accuracy: 0.1659 - val_loss: 4.8822 - val_Top-1 Accuracy: 0.0407 - val_Top-5 Accuracy: 0.1491 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 3/10000
-782/782 - 26s - loss: 4.5723 - Top-1 Accuracy: 0.0629 - Top-5 Accuracy: 0.2018 - val_loss: 4.4940 - val_Top-1 Accuracy: 0.0766 - val_Top-5 Accuracy: 0.2258 - lr: 0.1000 - 26s/epoch - 34ms/step
+782/782 - 28s - loss: 4.5079 - Top-1 Accuracy: 0.0690 - Top-5 Accuracy: 0.2176 - val_loss: 4.5893 - val_Top-1 Accuracy: 0.0650 - val_Top-5 Accuracy: 0.2101 - lr: 0.1000 - 28s/epoch - 35ms/step
 Epoch 4/10000
-782/782 - 26s - loss: 4.4106 - Top-1 Accuracy: 0.0833 - Top-5 Accuracy: 0.2439 - val_loss: 4.6676 - val_Top-1 Accuracy: 0.0608 - val_Top-5 Accuracy: 0.1912 - lr: 0.1000 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 4.3702 - Top-1 Accuracy: 0.0867 - Top-5 Accuracy: 0.2539 - val_loss: 4.4089 - val_Top-1 Accuracy: 0.0816 - val_Top-5 Accuracy: 0.2423 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 5/10000
-782/782 - 26s - loss: 4.3020 - Top-1 Accuracy: 0.0951 - Top-5 Accuracy: 0.2733 - val_loss: 5.1219 - val_Top-1 Accuracy: 0.0501 - val_Top-5 Accuracy: 0.1578 - lr: 0.1000 - 26s/epoch - 34ms/step
+782/782 - 28s - loss: 4.2623 - Top-1 Accuracy: 0.0996 - Top-5 Accuracy: 0.2792 - val_loss: 4.2710 - val_Top-1 Accuracy: 0.0982 - val_Top-5 Accuracy: 0.2801 - lr: 0.1000 - 28s/epoch - 36ms/step
 Epoch 6/10000
-782/782 - 27s - loss: 4.2133 - Top-1 Accuracy: 0.1068 - Top-5 Accuracy: 0.2953 - val_loss: 4.2543 - val_Top-1 Accuracy: 0.1069 - val_Top-5 Accuracy: 0.2825 - lr: 0.1000 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 4.1636 - Top-1 Accuracy: 0.1118 - Top-5 Accuracy: 0.3038 - val_loss: 4.1832 - val_Top-1 Accuracy: 0.1091 - val_Top-5 Accuracy: 0.2952 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 7/10000
-782/782 - 27s - loss: 4.1359 - Top-1 Accuracy: 0.1174 - Top-5 Accuracy: 0.3140 - val_loss: 4.4754 - val_Top-1 Accuracy: 0.0882 - val_Top-5 Accuracy: 0.2411 - lr: 0.1000 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 4.0739 - Top-1 Accuracy: 0.1246 - Top-5 Accuracy: 0.3285 - val_loss: 4.2456 - val_Top-1 Accuracy: 0.1040 - val_Top-5 Accuracy: 0.2959 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 8/10000
-782/782 - 26s - loss: 4.0612 - Top-1 Accuracy: 0.1277 - Top-5 Accuracy: 0.3315 - val_loss: 4.3582 - val_Top-1 Accuracy: 0.1003 - val_Top-5 Accuracy: 0.2739 - lr: 0.1000 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.9880 - Top-1 Accuracy: 0.1374 - Top-5 Accuracy: 0.3511 - val_loss: 4.1194 - val_Top-1 Accuracy: 0.1217 - val_Top-5 Accuracy: 0.3225 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 9/10000
-
-Epoch 9: ReduceLROnPlateau reducing learning rate to 0.010000000149011612.
-782/782 - 27s - loss: 3.9877 - Top-1 Accuracy: 0.1379 - Top-5 Accuracy: 0.3502 - val_loss: 4.3458 - val_Top-1 Accuracy: 0.0987 - val_Top-5 Accuracy: 0.2721 - lr: 0.1000 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.8972 - Top-1 Accuracy: 0.1503 - Top-5 Accuracy: 0.3729 - val_loss: 4.0399 - val_Top-1 Accuracy: 0.1337 - val_Top-5 Accuracy: 0.3447 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 10/10000
-782/782 - 26s - loss: 3.8149 - Top-1 Accuracy: 0.1644 - Top-5 Accuracy: 0.3904 - val_loss: 3.7818 - val_Top-1 Accuracy: 0.1686 - val_Top-5 Accuracy: 0.4059 - lr: 0.0100 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.8210 - Top-1 Accuracy: 0.1618 - Top-5 Accuracy: 0.3920 - val_loss: 4.3286 - val_Top-1 Accuracy: 0.1087 - val_Top-5 Accuracy: 0.2956 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 11/10000
-782/782 - 26s - loss: 3.7505 - Top-1 Accuracy: 0.1731 - Top-5 Accuracy: 0.4067 - val_loss: 3.7623 - val_Top-1 Accuracy: 0.1713 - val_Top-5 Accuracy: 0.4077 - lr: 0.0100 - 26s/epoch - 34ms/step
+782/782 - 28s - loss: 3.7550 - Top-1 Accuracy: 0.1715 - Top-5 Accuracy: 0.4061 - val_loss: 4.0556 - val_Top-1 Accuracy: 0.1399 - val_Top-5 Accuracy: 0.3447 - lr: 0.1000 - 28s/epoch - 35ms/step
 Epoch 12/10000
-782/782 - 26s - loss: 3.7259 - Top-1 Accuracy: 0.1768 - Top-5 Accuracy: 0.4146 - val_loss: 3.7452 - val_Top-1 Accuracy: 0.1775 - val_Top-5 Accuracy: 0.4127 - lr: 0.0100 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.7003 - Top-1 Accuracy: 0.1804 - Top-5 Accuracy: 0.4187 - val_loss: 3.9780 - val_Top-1 Accuracy: 0.1435 - val_Top-5 Accuracy: 0.3663 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 13/10000
-782/782 - 27s - loss: 3.6994 - Top-1 Accuracy: 0.1817 - Top-5 Accuracy: 0.4187 - val_loss: 3.7286 - val_Top-1 Accuracy: 0.1778 - val_Top-5 Accuracy: 0.4157 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.6500 - Top-1 Accuracy: 0.1881 - Top-5 Accuracy: 0.4311 - val_loss: 4.1736 - val_Top-1 Accuracy: 0.1281 - val_Top-5 Accuracy: 0.3257 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 14/10000
-782/782 - 27s - loss: 3.6798 - Top-1 Accuracy: 0.1857 - Top-5 Accuracy: 0.4232 - val_loss: 3.7251 - val_Top-1 Accuracy: 0.1805 - val_Top-5 Accuracy: 0.4177 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.6026 - Top-1 Accuracy: 0.1954 - Top-5 Accuracy: 0.4427 - val_loss: 3.8101 - val_Top-1 Accuracy: 0.1700 - val_Top-5 Accuracy: 0.4005 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 15/10000
-782/782 - 26s - loss: 3.6592 - Top-1 Accuracy: 0.1877 - Top-5 Accuracy: 0.4274 - val_loss: 3.7054 - val_Top-1 Accuracy: 0.1848 - val_Top-5 Accuracy: 0.4232 - lr: 0.0100 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.5677 - Top-1 Accuracy: 0.2017 - Top-5 Accuracy: 0.4491 - val_loss: 3.7502 - val_Top-1 Accuracy: 0.1710 - val_Top-5 Accuracy: 0.4112 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 16/10000
-782/782 - 27s - loss: 3.6403 - Top-1 Accuracy: 0.1907 - Top-5 Accuracy: 0.4326 - val_loss: 3.6883 - val_Top-1 Accuracy: 0.1842 - val_Top-5 Accuracy: 0.4262 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.5240 - Top-1 Accuracy: 0.2054 - Top-5 Accuracy: 0.4603 - val_loss: 4.0334 - val_Top-1 Accuracy: 0.1436 - val_Top-5 Accuracy: 0.3557 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 17/10000
-782/782 - 27s - loss: 3.6238 - Top-1 Accuracy: 0.1928 - Top-5 Accuracy: 0.4374 - val_loss: 3.7041 - val_Top-1 Accuracy: 0.1830 - val_Top-5 Accuracy: 0.4228 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.4944 - Top-1 Accuracy: 0.2130 - Top-5 Accuracy: 0.4669 - val_loss: 3.7592 - val_Top-1 Accuracy: 0.1729 - val_Top-5 Accuracy: 0.4084 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 18/10000
-782/782 - 27s - loss: 3.6058 - Top-1 Accuracy: 0.1968 - Top-5 Accuracy: 0.4401 - val_loss: 3.7099 - val_Top-1 Accuracy: 0.1848 - val_Top-5 Accuracy: 0.4235 - lr: 0.0100 - 27s/epoch - 34ms/step
+
+Epoch 18: ReduceLROnPlateau reducing learning rate to 0.010000000149011612.
+782/782 - 27s - loss: 3.4595 - Top-1 Accuracy: 0.2192 - Top-5 Accuracy: 0.4747 - val_loss: 3.8671 - val_Top-1 Accuracy: 0.1686 - val_Top-5 Accuracy: 0.3873 - lr: 0.1000 - 27s/epoch - 35ms/step
 Epoch 19/10000
-782/782 - 26s - loss: 3.5905 - Top-1 Accuracy: 0.1997 - Top-5 Accuracy: 0.4442 - val_loss: 3.6648 - val_Top-1 Accuracy: 0.1885 - val_Top-5 Accuracy: 0.4309 - lr: 0.0100 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.2862 - Top-1 Accuracy: 0.2482 - Top-5 Accuracy: 0.5116 - val_loss: 3.3334 - val_Top-1 Accuracy: 0.2428 - val_Top-5 Accuracy: 0.5015 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 20/10000
-782/782 - 27s - loss: 3.5702 - Top-1 Accuracy: 0.2031 - Top-5 Accuracy: 0.4480 - val_loss: 3.6591 - val_Top-1 Accuracy: 0.1906 - val_Top-5 Accuracy: 0.4327 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.2173 - Top-1 Accuracy: 0.2604 - Top-5 Accuracy: 0.5260 - val_loss: 3.3154 - val_Top-1 Accuracy: 0.2499 - val_Top-5 Accuracy: 0.5078 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 21/10000
-782/782 - 27s - loss: 3.5613 - Top-1 Accuracy: 0.2029 - Top-5 Accuracy: 0.4509 - val_loss: 3.6570 - val_Top-1 Accuracy: 0.1923 - val_Top-5 Accuracy: 0.4330 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.1897 - Top-1 Accuracy: 0.2656 - Top-5 Accuracy: 0.5328 - val_loss: 3.3080 - val_Top-1 Accuracy: 0.2489 - val_Top-5 Accuracy: 0.5076 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 22/10000
-782/782 - 27s - loss: 3.5421 - Top-1 Accuracy: 0.2075 - Top-5 Accuracy: 0.4562 - val_loss: 3.6645 - val_Top-1 Accuracy: 0.1907 - val_Top-5 Accuracy: 0.4326 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.1670 - Top-1 Accuracy: 0.2712 - Top-5 Accuracy: 0.5384 - val_loss: 3.3269 - val_Top-1 Accuracy: 0.2466 - val_Top-5 Accuracy: 0.5032 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 23/10000
-782/782 - 27s - loss: 3.5270 - Top-1 Accuracy: 0.2086 - Top-5 Accuracy: 0.4599 - val_loss: 3.6638 - val_Top-1 Accuracy: 0.1907 - val_Top-5 Accuracy: 0.4309 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 28s - loss: 3.1540 - Top-1 Accuracy: 0.2727 - Top-5 Accuracy: 0.5399 - val_loss: 3.3040 - val_Top-1 Accuracy: 0.2454 - val_Top-5 Accuracy: 0.5086 - lr: 0.0100 - 28s/epoch - 36ms/step
 Epoch 24/10000
-782/782 - 26s - loss: 3.5119 - Top-1 Accuracy: 0.2115 - Top-5 Accuracy: 0.4624 - val_loss: 3.6489 - val_Top-1 Accuracy: 0.1961 - val_Top-5 Accuracy: 0.4363 - lr: 0.0100 - 26s/epoch - 34ms/step
+782/782 - 28s - loss: 3.1387 - Top-1 Accuracy: 0.2766 - Top-5 Accuracy: 0.5440 - val_loss: 3.3111 - val_Top-1 Accuracy: 0.2477 - val_Top-5 Accuracy: 0.5106 - lr: 0.0100 - 28s/epoch - 36ms/step
 Epoch 25/10000
-782/782 - 27s - loss: 3.4976 - Top-1 Accuracy: 0.2160 - Top-5 Accuracy: 0.4656 - val_loss: 3.6234 - val_Top-1 Accuracy: 0.1993 - val_Top-5 Accuracy: 0.4445 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.1263 - Top-1 Accuracy: 0.2763 - Top-5 Accuracy: 0.5453 - val_loss: 3.3055 - val_Top-1 Accuracy: 0.2496 - val_Top-5 Accuracy: 0.5081 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 26/10000
-782/782 - 27s - loss: 3.4854 - Top-1 Accuracy: 0.2152 - Top-5 Accuracy: 0.4683 - val_loss: 3.6462 - val_Top-1 Accuracy: 0.1958 - val_Top-5 Accuracy: 0.4357 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.1189 - Top-1 Accuracy: 0.2792 - Top-5 Accuracy: 0.5491 - val_loss: 3.2948 - val_Top-1 Accuracy: 0.2539 - val_Top-5 Accuracy: 0.5121 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 27/10000
-782/782 - 27s - loss: 3.4693 - Top-1 Accuracy: 0.2177 - Top-5 Accuracy: 0.4721 - val_loss: 3.6150 - val_Top-1 Accuracy: 0.1980 - val_Top-5 Accuracy: 0.4419 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0992 - Top-1 Accuracy: 0.2823 - Top-5 Accuracy: 0.5534 - val_loss: 3.2799 - val_Top-1 Accuracy: 0.2550 - val_Top-5 Accuracy: 0.5182 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 28/10000
-782/782 - 26s - loss: 3.4575 - Top-1 Accuracy: 0.2204 - Top-5 Accuracy: 0.4749 - val_loss: 3.6573 - val_Top-1 Accuracy: 0.1977 - val_Top-5 Accuracy: 0.4342 - lr: 0.0100 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0926 - Top-1 Accuracy: 0.2820 - Top-5 Accuracy: 0.5544 - val_loss: 3.3004 - val_Top-1 Accuracy: 0.2500 - val_Top-5 Accuracy: 0.5101 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 29/10000
-782/782 - 27s - loss: 3.4386 - Top-1 Accuracy: 0.2249 - Top-5 Accuracy: 0.4775 - val_loss: 3.7092 - val_Top-1 Accuracy: 0.1918 - val_Top-5 Accuracy: 0.4242 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0753 - Top-1 Accuracy: 0.2868 - Top-5 Accuracy: 0.5574 - val_loss: 3.2812 - val_Top-1 Accuracy: 0.2577 - val_Top-5 Accuracy: 0.5154 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 30/10000
 
 Epoch 30: ReduceLROnPlateau reducing learning rate to 0.0009999999776482583.
-782/782 - 27s - loss: 3.4297 - Top-1 Accuracy: 0.2249 - Top-5 Accuracy: 0.4806 - val_loss: 3.6237 - val_Top-1 Accuracy: 0.2023 - val_Top-5 Accuracy: 0.4422 - lr: 0.0100 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0687 - Top-1 Accuracy: 0.2878 - Top-5 Accuracy: 0.5589 - val_loss: 3.2990 - val_Top-1 Accuracy: 0.2524 - val_Top-5 Accuracy: 0.5111 - lr: 0.0100 - 27s/epoch - 35ms/step
 Epoch 31/10000
-782/782 - 27s - loss: 3.3778 - Top-1 Accuracy: 0.2350 - Top-5 Accuracy: 0.4910 - val_loss: 3.5440 - val_Top-1 Accuracy: 0.2102 - val_Top-5 Accuracy: 0.4605 - lr: 1.0000e-03 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0318 - Top-1 Accuracy: 0.2944 - Top-5 Accuracy: 0.5660 - val_loss: 3.2517 - val_Top-1 Accuracy: 0.2610 - val_Top-5 Accuracy: 0.5251 - lr: 1.0000e-03 - 27s/epoch - 35ms/step
 Epoch 32/10000
-782/782 - 27s - loss: 3.3552 - Top-1 Accuracy: 0.2379 - Top-5 Accuracy: 0.4963 - val_loss: 3.5413 - val_Top-1 Accuracy: 0.2124 - val_Top-5 Accuracy: 0.4589 - lr: 1.0000e-03 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0249 - Top-1 Accuracy: 0.2959 - Top-5 Accuracy: 0.5676 - val_loss: 3.2502 - val_Top-1 Accuracy: 0.2630 - val_Top-5 Accuracy: 0.5236 - lr: 1.0000e-03 - 27s/epoch - 35ms/step
 Epoch 33/10000
-782/782 - 27s - loss: 3.3462 - Top-1 Accuracy: 0.2412 - Top-5 Accuracy: 0.4992 - val_loss: 3.5393 - val_Top-1 Accuracy: 0.2151 - val_Top-5 Accuracy: 0.4593 - lr: 1.0000e-03 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0196 - Top-1 Accuracy: 0.2960 - Top-5 Accuracy: 0.5687 - val_loss: 3.2511 - val_Top-1 Accuracy: 0.2641 - val_Top-5 Accuracy: 0.5234 - lr: 1.0000e-03 - 27s/epoch - 35ms/step
 Epoch 34/10000
-782/782 - 27s - loss: 3.3391 - Top-1 Accuracy: 0.2406 - Top-5 Accuracy: 0.5002 - val_loss: 3.5409 - val_Top-1 Accuracy: 0.2132 - val_Top-5 Accuracy: 0.4605 - lr: 1.0000e-03 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0131 - Top-1 Accuracy: 0.2966 - Top-5 Accuracy: 0.5689 - val_loss: 3.2518 - val_Top-1 Accuracy: 0.2635 - val_Top-5 Accuracy: 0.5237 - lr: 1.0000e-03 - 27s/epoch - 35ms/step
 Epoch 35/10000
-782/782 - 27s - loss: 3.3360 - Top-1 Accuracy: 0.2420 - Top-5 Accuracy: 0.5001 - val_loss: 3.5404 - val_Top-1 Accuracy: 0.2135 - val_Top-5 Accuracy: 0.4605 - lr: 1.0000e-03 - 27s/epoch - 34ms/step
-Epoch 36/10000
 
-Epoch 36: ReduceLROnPlateau reducing learning rate to 9.999999310821295e-05.
-782/782 - 27s - loss: 3.3316 - Top-1 Accuracy: 0.2417 - Top-5 Accuracy: 0.5020 - val_loss: 3.5406 - val_Top-1 Accuracy: 0.2119 - val_Top-5 Accuracy: 0.4614 - lr: 1.0000e-03 - 27s/epoch - 34ms/step
+Epoch 35: ReduceLROnPlateau reducing learning rate to 9.999999310821295e-05.
+782/782 - 27s - loss: 3.0136 - Top-1 Accuracy: 0.2975 - Top-5 Accuracy: 0.5704 - val_loss: 3.2510 - val_Top-1 Accuracy: 0.2630 - val_Top-5 Accuracy: 0.5220 - lr: 1.0000e-03 - 27s/epoch - 35ms/step
+Epoch 36/10000
+782/782 - 27s - loss: 3.0105 - Top-1 Accuracy: 0.2973 - Top-5 Accuracy: 0.5703 - val_loss: 3.2501 - val_Top-1 Accuracy: 0.2625 - val_Top-5 Accuracy: 0.5229 - lr: 1.0000e-04 - 27s/epoch - 35ms/step
 Epoch 37/10000
-782/782 - 27s - loss: 3.3261 - Top-1 Accuracy: 0.2432 - Top-5 Accuracy: 0.5032 - val_loss: 3.5364 - val_Top-1 Accuracy: 0.2157 - val_Top-5 Accuracy: 0.4624 - lr: 1.0000e-04 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0083 - Top-1 Accuracy: 0.2991 - Top-5 Accuracy: 0.5714 - val_loss: 3.2499 - val_Top-1 Accuracy: 0.2626 - val_Top-5 Accuracy: 0.5237 - lr: 1.0000e-04 - 27s/epoch - 35ms/step
 Epoch 38/10000
-782/782 - 26s - loss: 3.3168 - Top-1 Accuracy: 0.2437 - Top-5 Accuracy: 0.5049 - val_loss: 3.5362 - val_Top-1 Accuracy: 0.2148 - val_Top-5 Accuracy: 0.4614 - lr: 1.0000e-04 - 26s/epoch - 34ms/step
+782/782 - 28s - loss: 3.0069 - Top-1 Accuracy: 0.2984 - Top-5 Accuracy: 0.5709 - val_loss: 3.2495 - val_Top-1 Accuracy: 0.2619 - val_Top-5 Accuracy: 0.5239 - lr: 1.0000e-04 - 28s/epoch - 36ms/step
 Epoch 39/10000
-782/782 - 26s - loss: 3.3220 - Top-1 Accuracy: 0.2429 - Top-5 Accuracy: 0.5045 - val_loss: 3.5362 - val_Top-1 Accuracy: 0.2150 - val_Top-5 Accuracy: 0.4608 - lr: 1.0000e-04 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0006 - Top-1 Accuracy: 0.3000 - Top-5 Accuracy: 0.5720 - val_loss: 3.2494 - val_Top-1 Accuracy: 0.2615 - val_Top-5 Accuracy: 0.5239 - lr: 1.0000e-04 - 27s/epoch - 35ms/step
 Epoch 40/10000
-782/782 - 27s - loss: 3.3211 - Top-1 Accuracy: 0.2442 - Top-5 Accuracy: 0.5039 - val_loss: 3.5359 - val_Top-1 Accuracy: 0.2148 - val_Top-5 Accuracy: 0.4610 - lr: 1.0000e-04 - 27s/epoch - 34ms/step
+782/782 - 28s - loss: 3.0070 - Top-1 Accuracy: 0.2992 - Top-5 Accuracy: 0.5709 - val_loss: 3.2493 - val_Top-1 Accuracy: 0.2619 - val_Top-5 Accuracy: 0.5240 - lr: 1.0000e-04 - 28s/epoch - 35ms/step
 Epoch 41/10000
-782/782 - 27s - loss: 3.3207 - Top-1 Accuracy: 0.2447 - Top-5 Accuracy: 0.5036 - val_loss: 3.5361 - val_Top-1 Accuracy: 0.2150 - val_Top-5 Accuracy: 0.4611 - lr: 1.0000e-04 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0101 - Top-1 Accuracy: 0.2976 - Top-5 Accuracy: 0.5712 - val_loss: 3.2492 - val_Top-1 Accuracy: 0.2618 - val_Top-5 Accuracy: 0.5249 - lr: 1.0000e-04 - 27s/epoch - 35ms/step
 Epoch 42/10000
-782/782 - 27s - loss: 3.3153 - Top-1 Accuracy: 0.2449 - Top-5 Accuracy: 0.5045 - val_loss: 3.5356 - val_Top-1 Accuracy: 0.2141 - val_Top-5 Accuracy: 0.4610 - lr: 1.0000e-04 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0079 - Top-1 Accuracy: 0.2993 - Top-5 Accuracy: 0.5705 - val_loss: 3.2489 - val_Top-1 Accuracy: 0.2622 - val_Top-5 Accuracy: 0.5248 - lr: 1.0000e-04 - 27s/epoch - 35ms/step
 Epoch 43/10000
-782/782 - 27s - loss: 3.3162 - Top-1 Accuracy: 0.2451 - Top-5 Accuracy: 0.5057 - val_loss: 3.5356 - val_Top-1 Accuracy: 0.2145 - val_Top-5 Accuracy: 0.4614 - lr: 1.0000e-04 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0079 - Top-1 Accuracy: 0.2988 - Top-5 Accuracy: 0.5704 - val_loss: 3.2490 - val_Top-1 Accuracy: 0.2626 - val_Top-5 Accuracy: 0.5243 - lr: 1.0000e-04 - 27s/epoch - 35ms/step
 Epoch 44/10000
-782/782 - 27s - loss: 3.3174 - Top-1 Accuracy: 0.2445 - Top-5 Accuracy: 0.5065 - val_loss: 3.5357 - val_Top-1 Accuracy: 0.2139 - val_Top-5 Accuracy: 0.4616 - lr: 1.0000e-04 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0049 - Top-1 Accuracy: 0.2985 - Top-5 Accuracy: 0.5730 - val_loss: 3.2490 - val_Top-1 Accuracy: 0.2629 - val_Top-5 Accuracy: 0.5240 - lr: 1.0000e-04 - 27s/epoch - 35ms/step
 Epoch 45/10000
 
 Epoch 45: ReduceLROnPlateau reducing learning rate to 9.999999019782991e-06.
-782/782 - 27s - loss: 3.3121 - Top-1 Accuracy: 0.2456 - Top-5 Accuracy: 0.5052 - val_loss: 3.5355 - val_Top-1 Accuracy: 0.2149 - val_Top-5 Accuracy: 0.4617 - lr: 1.0000e-04 - 27s/epoch - 34ms/step
+782/782 - 28s - loss: 3.0078 - Top-1 Accuracy: 0.2995 - Top-5 Accuracy: 0.5713 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2624 - val_Top-5 Accuracy: 0.5241 - lr: 1.0000e-04 - 28s/epoch - 36ms/step
 Epoch 46/10000
-782/782 - 26s - loss: 3.3136 - Top-1 Accuracy: 0.2450 - Top-5 Accuracy: 0.5057 - val_loss: 3.5358 - val_Top-1 Accuracy: 0.2148 - val_Top-5 Accuracy: 0.4617 - lr: 1.0000e-05 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0058 - Top-1 Accuracy: 0.2983 - Top-5 Accuracy: 0.5710 - val_loss: 3.2486 - val_Top-1 Accuracy: 0.2634 - val_Top-5 Accuracy: 0.5251 - lr: 1.0000e-05 - 27s/epoch - 35ms/step
 Epoch 47/10000
-782/782 - 26s - loss: 3.3137 - Top-1 Accuracy: 0.2451 - Top-5 Accuracy: 0.5052 - val_loss: 3.5357 - val_Top-1 Accuracy: 0.2150 - val_Top-5 Accuracy: 0.4612 - lr: 1.0000e-05 - 26s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0030 - Top-1 Accuracy: 0.3006 - Top-5 Accuracy: 0.5724 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2626 - val_Top-5 Accuracy: 0.5241 - lr: 1.0000e-05 - 27s/epoch - 35ms/step
 Epoch 48/10000
-
-Epoch 48: ReduceLROnPlateau reducing learning rate to 9.99999883788405e-07.
-782/782 - 27s - loss: 3.3131 - Top-1 Accuracy: 0.2462 - Top-5 Accuracy: 0.5062 - val_loss: 3.5358 - val_Top-1 Accuracy: 0.2148 - val_Top-5 Accuracy: 0.4617 - lr: 1.0000e-05 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0027 - Top-1 Accuracy: 0.2989 - Top-5 Accuracy: 0.5721 - val_loss: 3.2485 - val_Top-1 Accuracy: 0.2626 - val_Top-5 Accuracy: 0.5241 - lr: 1.0000e-05 - 27s/epoch - 35ms/step
 Epoch 49/10000
-782/782 - 27s - loss: 3.3117 - Top-1 Accuracy: 0.2468 - Top-5 Accuracy: 0.5060 - val_loss: 3.5359 - val_Top-1 Accuracy: 0.2145 - val_Top-5 Accuracy: 0.4611 - lr: 1.0000e-06 - 27s/epoch - 34ms/step
-Epoch 50/10000
-782/782 - 26s - loss: 3.3188 - Top-1 Accuracy: 0.2442 - Top-5 Accuracy: 0.5052 - val_loss: 3.5358 - val_Top-1 Accuracy: 0.2148 - val_Top-5 Accuracy: 0.4611 - lr: 1.0000e-06 - 26s/epoch - 34ms/step
-Epoch 51/10000
 
-Epoch 51: ReduceLROnPlateau reducing learning rate to 1e-07.
-782/782 - 27s - loss: 3.3116 - Top-1 Accuracy: 0.2456 - Top-5 Accuracy: 0.5070 - val_loss: 3.5359 - val_Top-1 Accuracy: 0.2144 - val_Top-5 Accuracy: 0.4613 - lr: 1.0000e-06 - 27s/epoch - 34ms/step
+Epoch 49: ReduceLROnPlateau reducing learning rate to 9.99999883788405e-07.
+782/782 - 27s - loss: 3.0081 - Top-1 Accuracy: 0.2983 - Top-5 Accuracy: 0.5720 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2628 - val_Top-5 Accuracy: 0.5249 - lr: 1.0000e-05 - 27s/epoch - 35ms/step
+Epoch 50/10000
+782/782 - 28s - loss: 3.0045 - Top-1 Accuracy: 0.3000 - Top-5 Accuracy: 0.5721 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2625 - val_Top-5 Accuracy: 0.5245 - lr: 1.0000e-06 - 28s/epoch - 35ms/step
+Epoch 51/10000
+782/782 - 27s - loss: 3.0066 - Top-1 Accuracy: 0.2980 - Top-5 Accuracy: 0.5701 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2624 - val_Top-5 Accuracy: 0.5245 - lr: 1.0000e-06 - 27s/epoch - 35ms/step
 Epoch 52/10000
-782/782 - 27s - loss: 3.3131 - Top-1 Accuracy: 0.2446 - Top-5 Accuracy: 0.5047 - val_loss: 3.5358 - val_Top-1 Accuracy: 0.2149 - val_Top-5 Accuracy: 0.4614 - lr: 1.0000e-07 - 27s/epoch - 34ms/step
+
+Epoch 52: ReduceLROnPlateau reducing learning rate to 1e-07.
+782/782 - 27s - loss: 3.0061 - Top-1 Accuracy: 0.2991 - Top-5 Accuracy: 0.5711 - val_loss: 3.2486 - val_Top-1 Accuracy: 0.2636 - val_Top-5 Accuracy: 0.5251 - lr: 1.0000e-06 - 27s/epoch - 35ms/step
 Epoch 53/10000
-782/782 - 27s - loss: 3.3146 - Top-1 Accuracy: 0.2448 - Top-5 Accuracy: 0.5060 - val_loss: 3.5359 - val_Top-1 Accuracy: 0.2146 - val_Top-5 Accuracy: 0.4611 - lr: 1.0000e-07 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0029 - Top-1 Accuracy: 0.3010 - Top-5 Accuracy: 0.5719 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2624 - val_Top-5 Accuracy: 0.5240 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
 Epoch 54/10000
-782/782 - 27s - loss: 3.3160 - Top-1 Accuracy: 0.2464 - Top-5 Accuracy: 0.5048 - val_loss: 3.5359 - val_Top-1 Accuracy: 0.2147 - val_Top-5 Accuracy: 0.4614 - lr: 1.0000e-07 - 27s/epoch - 34ms/step
+782/782 - 27s - loss: 3.0085 - Top-1 Accuracy: 0.2988 - Top-5 Accuracy: 0.5710 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2632 - val_Top-5 Accuracy: 0.5245 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
 Epoch 55/10000
-782/782 - 26s - loss: 3.3176 - Top-1 Accuracy: 0.2445 - Top-5 Accuracy: 0.5049 - val_loss: 3.5357 - val_Top-1 Accuracy: 0.2142 - val_Top-5 Accuracy: 0.4606 - lr: 1.0000e-07 - 26s/epoch - 34ms/step
-Epoch 55: early stopping
-2024-04-12 11:41:01.490133: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:378] Ignored output_format.
-2024-04-12 11:41:01.490203: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:381] Ignored drop_control_dependency.
-2024-04-12 11:41:01.490572: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: etinynet
-2024-04-12 11:41:01.514440: I tensorflow/cc/saved_model/reader.cc:51] Reading meta graph with tags { serve }
-2024-04-12 11:41:01.514505: I tensorflow/cc/saved_model/reader.cc:146] Reading SavedModel debug info (if present) from: etinynet
-2024-04-12 11:41:01.566407: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
-2024-04-12 11:41:01.584357: I tensorflow/cc/saved_model/loader.cc:233] Restoring SavedModel bundle.
-2024-04-12 11:41:02.149067: I tensorflow/cc/saved_model/loader.cc:217] Running initialization op on SavedModel bundle at path: etinynet
-2024-04-12 11:41:02.330138: I tensorflow/cc/saved_model/loader.cc:316] SavedModel load for tags { serve }; Status: success: OK. Took 839577 microseconds.
-2024-04-12 11:41:02.459051: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+782/782 - 27s - loss: 3.0031 - Top-1 Accuracy: 0.2990 - Top-5 Accuracy: 0.5735 - val_loss: 3.2486 - val_Top-1 Accuracy: 0.2625 - val_Top-5 Accuracy: 0.5241 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 56/10000
+782/782 - 28s - loss: 3.0057 - Top-1 Accuracy: 0.2981 - Top-5 Accuracy: 0.5709 - val_loss: 3.2490 - val_Top-1 Accuracy: 0.2627 - val_Top-5 Accuracy: 0.5243 - lr: 1.0000e-07 - 28s/epoch - 36ms/step
+Epoch 57/10000
+782/782 - 28s - loss: 3.0047 - Top-1 Accuracy: 0.2998 - Top-5 Accuracy: 0.5725 - val_loss: 3.2486 - val_Top-1 Accuracy: 0.2631 - val_Top-5 Accuracy: 0.5245 - lr: 1.0000e-07 - 28s/epoch - 35ms/step
+Epoch 58/10000
+782/782 - 27s - loss: 3.0018 - Top-1 Accuracy: 0.2986 - Top-5 Accuracy: 0.5728 - val_loss: 3.2485 - val_Top-1 Accuracy: 0.2623 - val_Top-5 Accuracy: 0.5248 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 59/10000
+782/782 - 27s - loss: 3.0031 - Top-1 Accuracy: 0.2984 - Top-5 Accuracy: 0.5711 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2628 - val_Top-5 Accuracy: 0.5244 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 60/10000
+782/782 - 27s - loss: 3.0026 - Top-1 Accuracy: 0.3007 - Top-5 Accuracy: 0.5715 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2629 - val_Top-5 Accuracy: 0.5245 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 61/10000
+782/782 - 27s - loss: 3.0018 - Top-1 Accuracy: 0.2997 - Top-5 Accuracy: 0.5724 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2636 - val_Top-5 Accuracy: 0.5240 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 62/10000
+782/782 - 28s - loss: 3.0067 - Top-1 Accuracy: 0.2986 - Top-5 Accuracy: 0.5725 - val_loss: 3.2486 - val_Top-1 Accuracy: 0.2624 - val_Top-5 Accuracy: 0.5242 - lr: 1.0000e-07 - 28s/epoch - 35ms/step
+Epoch 63/10000
+782/782 - 27s - loss: 3.0046 - Top-1 Accuracy: 0.2988 - Top-5 Accuracy: 0.5705 - val_loss: 3.2490 - val_Top-1 Accuracy: 0.2622 - val_Top-5 Accuracy: 0.5242 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 64/10000
+782/782 - 28s - loss: 3.0037 - Top-1 Accuracy: 0.2984 - Top-5 Accuracy: 0.5709 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2633 - val_Top-5 Accuracy: 0.5242 - lr: 1.0000e-07 - 28s/epoch - 35ms/step
+Epoch 65/10000
+782/782 - 27s - loss: 3.0052 - Top-1 Accuracy: 0.2984 - Top-5 Accuracy: 0.5714 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2633 - val_Top-5 Accuracy: 0.5243 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 66/10000
+782/782 - 27s - loss: 3.0033 - Top-1 Accuracy: 0.2976 - Top-5 Accuracy: 0.5725 - val_loss: 3.2485 - val_Top-1 Accuracy: 0.2625 - val_Top-5 Accuracy: 0.5247 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 67/10000
+782/782 - 27s - loss: 3.0105 - Top-1 Accuracy: 0.2975 - Top-5 Accuracy: 0.5704 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2627 - val_Top-5 Accuracy: 0.5245 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 68/10000
+782/782 - 27s - loss: 3.0039 - Top-1 Accuracy: 0.2988 - Top-5 Accuracy: 0.5717 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2632 - val_Top-5 Accuracy: 0.5247 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 69/10000
+782/782 - 27s - loss: 3.0052 - Top-1 Accuracy: 0.2983 - Top-5 Accuracy: 0.5711 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2630 - val_Top-5 Accuracy: 0.5237 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 70/10000
+782/782 - 28s - loss: 3.0002 - Top-1 Accuracy: 0.3016 - Top-5 Accuracy: 0.5728 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2635 - val_Top-5 Accuracy: 0.5244 - lr: 1.0000e-07 - 28s/epoch - 35ms/step
+Epoch 71/10000
+782/782 - 27s - loss: 3.0072 - Top-1 Accuracy: 0.2990 - Top-5 Accuracy: 0.5721 - val_loss: 3.2487 - val_Top-1 Accuracy: 0.2625 - val_Top-5 Accuracy: 0.5243 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 72/10000
+782/782 - 28s - loss: 3.0018 - Top-1 Accuracy: 0.3002 - Top-5 Accuracy: 0.5720 - val_loss: 3.2486 - val_Top-1 Accuracy: 0.2628 - val_Top-5 Accuracy: 0.5247 - lr: 1.0000e-07 - 28s/epoch - 36ms/step
+Epoch 73/10000
+782/782 - 27s - loss: 3.0027 - Top-1 Accuracy: 0.3011 - Top-5 Accuracy: 0.5731 - val_loss: 3.2489 - val_Top-1 Accuracy: 0.2629 - val_Top-5 Accuracy: 0.5240 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 74/10000
+782/782 - 27s - loss: 3.0053 - Top-1 Accuracy: 0.3003 - Top-5 Accuracy: 0.5722 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2629 - val_Top-5 Accuracy: 0.5244 - lr: 1.0000e-07 - 27s/epoch - 35ms/step
+Epoch 75/10000
+782/782 - 27s - loss: 3.0044 - Top-1 Accuracy: 0.2985 - Top-5 Accuracy: 0.5729 - val_loss: 3.2488 - val_Top-1 Accuracy: 0.2634 - val_Top-5 Accuracy: 0.5247 - lr: 1.0000e-07 - 27s/epoch - 34ms/step
+Epoch 76/10000
+782/782 - 27s - loss: 3.0047 - Top-1 Accuracy: 0.2984 - Top-5 Accuracy: 0.5716 - val_loss: 3.2486 - val_Top-1 Accuracy: 0.2625 - val_Top-5 Accuracy: 0.5238 - lr: 1.0000e-07 - 27s/epoch - 34ms/step
+Epoch 76: early stopping
+2024-04-14 12:14:48.933087: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:378] Ignored output_format.
+2024-04-14 12:14:48.933161: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:381] Ignored drop_control_dependency.
+2024-04-14 12:14:48.933507: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: etinynet
+2024-04-14 12:14:48.961088: I tensorflow/cc/saved_model/reader.cc:51] Reading meta graph with tags { serve }
+2024-04-14 12:14:48.961148: I tensorflow/cc/saved_model/reader.cc:146] Reading SavedModel debug info (if present) from: etinynet
+2024-04-14 12:14:49.013629: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
+2024-04-14 12:14:49.033708: I tensorflow/cc/saved_model/loader.cc:233] Restoring SavedModel bundle.
+2024-04-14 12:14:49.610369: I tensorflow/cc/saved_model/loader.cc:217] Running initialization op on SavedModel bundle at path: etinynet
+2024-04-14 12:14:49.795960: I tensorflow/cc/saved_model/loader.cc:316] SavedModel load for tags { serve }; Status: success: OK. Took 862455 microseconds.
+2024-04-14 12:14:49.929634: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
 Summary on the non-converted ops:
 ---------------------------------
  * Accepted dialects: tfl, builtin, func
@@ -235,14 +277,14 @@ Summary on the non-converted ops:
   (f32: 26)
   (f32: 1)
   (f32: 1)
-2024-04-12 11:41:06.604433: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:378] Ignored output_format.
-2024-04-12 11:41:06.604499: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:381] Ignored drop_control_dependency.
-2024-04-12 11:41:06.604727: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: etinynet
-2024-04-12 11:41:06.627580: I tensorflow/cc/saved_model/reader.cc:51] Reading meta graph with tags { serve }
-2024-04-12 11:41:06.627647: I tensorflow/cc/saved_model/reader.cc:146] Reading SavedModel debug info (if present) from: etinynet
-2024-04-12 11:41:06.696542: I tensorflow/cc/saved_model/loader.cc:233] Restoring SavedModel bundle.
-2024-04-12 11:41:07.270253: I tensorflow/cc/saved_model/loader.cc:217] Running initialization op on SavedModel bundle at path: etinynet
-2024-04-12 11:41:07.458887: I tensorflow/cc/saved_model/loader.cc:316] SavedModel load for tags { serve }; Status: success: OK. Took 854162 microseconds.
+2024-04-14 12:14:54.059537: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:378] Ignored output_format.
+2024-04-14 12:14:54.059605: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:381] Ignored drop_control_dependency.
+2024-04-14 12:14:54.059813: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: etinynet
+2024-04-14 12:14:54.086953: I tensorflow/cc/saved_model/reader.cc:51] Reading meta graph with tags { serve }
+2024-04-14 12:14:54.087017: I tensorflow/cc/saved_model/reader.cc:146] Reading SavedModel debug info (if present) from: etinynet
+2024-04-14 12:14:54.157913: I tensorflow/cc/saved_model/loader.cc:233] Restoring SavedModel bundle.
+2024-04-14 12:14:54.730653: I tensorflow/cc/saved_model/loader.cc:217] Running initialization op on SavedModel bundle at path: etinynet
+2024-04-14 12:14:54.916222: I tensorflow/cc/saved_model/loader.cc:316] SavedModel load for tags { serve }; Status: success: OK. Took 856410 microseconds.
 Summary on the non-converted ops:
 ---------------------------------
  * Accepted dialects: tfl, builtin, func
@@ -261,5 +303,5 @@ fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inferen
 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 1289.0859375
 476.921875
-Top-1 Accuracy: 0.2091
-Top-5 Accuracy: 0.4688
+Top-1 Accuracy: 0.2525
+Top-5 Accuracy: 0.5247
