@@ -1,3 +1,5 @@
 venv
 tensorboard_log_dir
 tiny-imagenet-200
+etinynet_*
+etinynet

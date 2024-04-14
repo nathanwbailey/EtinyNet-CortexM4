@@ -60,12 +60,12 @@ normalized_train_dataset_data = rescaled_train_dataset_data.map(lambda x: norm_l
 # -- Convert to TFLite -- #
 # ----------------------- #
 #FP32 Model
-converter = tf.lite.TFLiteConverter.from_saved_model('etinynet')
+converter = tf.lite.TFLiteConverter.from_saved_model('etinynet_48')
 tflite_model = converter.convert()
-with open("etinynet.tflite", "wb") as f:
+with open("etinynet_48.tflite", "wb") as f:
     f.write(tflite_model) # type: ignore[reportAttributeAccessIssue]
 
-tflite_model_kb_size = os.path.getsize("etinynet.tflite") / 1024
+tflite_model_kb_size = os.path.getsize("etinynet_48.tflite") / 1024
 print(tflite_model_kb_size)
 
 #INT8 Model
@@ -75,7 +75,7 @@ def representative_dataset_function() -> Generator[list, None, None]:
         i_value_fp32 = tf.cast(input_value, tf.float32)
         yield [i_value_fp32]
 
-converter = tf.lite.TFLiteConverter.from_saved_model('etinynet')
+converter = tf.lite.TFLiteConverter.from_saved_model('etinynet_48')
 converter.representative_dataset = tf.lite.RepresentativeDataset(representative_dataset_function)
 converter.optimizations = [tf.lite.Optimize.DEFAULT] # type: ignore[reportAttributeAccessIssue]
 converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
@@ -84,8 +84,8 @@ converter.inference_output_type = tf.int8 # type: ignore[reportAttributeAccessIs
 
 
 tflite_model = converter.convert()
-with open("etinynet_int8.tflite", "wb") as f:
+with open("etinynet_48_int8.tflite", "wb") as f:
     f.write(tflite_model) # type: ignore[reportAttributeAccessIssue]
 
-tflite_model_kb_size = os.path.getsize("etinynet_int8.tflite") / 1024
+tflite_model_kb_size = os.path.getsize("etinynet_48_int8.tflite") / 1024
 print(tflite_model_kb_size)

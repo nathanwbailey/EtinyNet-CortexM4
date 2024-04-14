@@ -59,7 +59,7 @@ normalized_train_dataset_data = rescaled_train_dataset_data.map(lambda x: norm_l
 # -- Evaluate TFLite Model -- #
 # --------------------------- #
 
-tflite_interpreter = tf.lite.Interpreter(model_path="etinynet_int8.tflite")
+tflite_interpreter = tf.lite.Interpreter(model_path="etinynet_48_int8.tflite")
 tflite_interpreter.allocate_tensors()
 
 input_details = tflite_interpreter.get_input_details()[0]
