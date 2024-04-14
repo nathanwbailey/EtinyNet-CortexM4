@@ -2,7 +2,6 @@
 import tensorflow as tf # type: ignore[import-untyped]
 from tensorflow import keras # type: ignore[reportAttributeAccessIssue,import-untyped] # pylint: disable=no-member,import-error,no-name-in-module
 from etinynet import create_etinynet_model
-import tensorflow_model_optimization as tfmot
 from typing import Generator
 import numpy as np
 import os
@@ -107,48 +106,30 @@ def train_model_input_size(spatial_image_size: tuple[int], input_model: keras.Mo
         new_model.set_weights(input_model.get_weights())
     new_model.summary(expand_nested=True)
 
-    new_model = train_model(keras_model=new_model, learning_rate=0.1, t_dataset=train_dataset, v_dataset=valid_dataset, epochs=1)
+    new_model = train_model(keras_model=new_model, learning_rate=0.1, t_dataset=train_dataset, v_dataset=valid_dataset, epochs=100)
     new_model.save('etinynet_'+str(spatial_image_size[0]))
     return new_model
 
 input_tuples = [(224, 224), (112, 112), (96, 96), (64, 64), (48, 48)]
 
-model = None
-for idx, input_tuple in enumerate(input_tuples):
-    model = train_model_input_size(input_tuple, input_model=model)
+# model = None
+# for idx, input_tuple in enumerate(input_tuples):
+#     model = train_model_input_size(input_tuple, input_model=model)
 
-q_aware_image_size = (48,48)
-train_dataset_q_aware, valid_dataset_q_aware, normalized_train_dataset_data = create_dataset(batch_size=BATCH_SIZE, image_size=q_aware_image_size)
+final_image_size = (48,48)
+train_dataset_final, valid_dataset_final, normalized_train_dataset_data = create_dataset(batch_size=BATCH_SIZE, image_size=final_image_size)
 
-baseline_model_loss, baseline_model_accuracy = model.evaluate(valid_dataset_q_aware, verbose=2)
-
-print('Baseline test loss:', baseline_model_loss)
-print('Baseline test loss:', baseline_model_accuracy)
-
-# --------------------------------- #
-# -- Quantization Aware Training -- #
-# --------------------------------- #
-
-q_aware_model = tfmot.quantization.keras.quantize_model(model)
-q_aware_model = train_model(keras_model=model, learning_rate=0.1, t_dataset=train_dataset_q_aware, v_dataset=valid_dataset_q_aware, epochs=100)
-
-q_aware_model_loss, q_aware_model_accuracy = q_aware_model.evaluate(valid_dataset_q_aware, verbose=2)
-
-print('Quant test loss:', q_aware_model_loss)
-print('Quant test loss:', q_aware_model_accuracy)
-
-q_aware_model.save('etinynet_48_quant')
 
 # ----------------------- #
 # -- Convert to TFLite -- #
 # ----------------------- #
 #FP32 Model
-converter = tf.lite.TFLiteConverter.from_saved_model('etinynet_48_quant')
+converter = tf.lite.TFLiteConverter.from_saved_model('etinynet_48')
 tflite_model = converter.convert()
-with open("etinynet_48_quant_aware.tflite", "wb") as f:
+with open("etinynet.tflite", "wb") as f:
     f.write(tflite_model) # type: ignore[reportAttributeAccessIssue]
 
-tflite_model_kb_size = os.path.getsize("etinynet_48_quant_aware.tflite") / 1024
+tflite_model_kb_size = os.path.getsize("etinynet.tflite") / 1024
 print(tflite_model_kb_size)
 
 #INT8 Model
@@ -158,7 +139,7 @@ def representative_dataset_function() -> Generator[list, None, None]:
         i_value_fp32 = tf.cast(input_value, tf.float32)
         yield [i_value_fp32]
 
-converter = tf.lite.TFLiteConverter.from_saved_model('etinynet_48_quant')
+converter = tf.lite.TFLiteConverter.from_saved_model('etinynet_48')
 converter.representative_dataset = tf.lite.RepresentativeDataset(representative_dataset_function)
 converter.optimizations = [tf.lite.Optimize.DEFAULT] # type: ignore[reportAttributeAccessIssue]
 converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
@@ -167,10 +148,10 @@ converter.inference_output_type = tf.int8 # type: ignore[reportAttributeAccessIs
 
 
 tflite_model = converter.convert()
-with open("etinynet_int8_48_quant_aware.tflite", "wb") as f:
+with open("etinynet_int8.tflite", "wb") as f:
     f.write(tflite_model) # type: ignore[reportAttributeAccessIssue]
 
-tflite_model_kb_size = os.path.getsize("etinynet_int8_48_quant_aware.tflite") / 1024
+tflite_model_kb_size = os.path.getsize("etinynet_int8.tflite") / 1024
 print(tflite_model_kb_size)
 
 
@@ -204,7 +185,7 @@ def classify_sample_tflite(interpreter: tf.lite.Interpreter, input_d: dict, outp
 num_correct_examples = 0
 num_examples = 0
 num_correct_examples_top_5 = 0
-for i_value, o_value in valid_dataset_q_aware.unbatch():
+for i_value, o_value in valid_dataset_final.unbatch():
     output = classify_sample_tflite(tflite_interpreter, input_details, output_details, input_quant_scale, output_quant_scale, input_quant_zero_point, output_quant_zero_point, i_value)
     if tf.cast(tf.math.argmax(output), tf.int32) == o_value:
         num_correct_examples += 1
@@ -241,7 +222,7 @@ def generate_h_file(size: int, data: str, label: str) -> str:
     return str_out
 
 
-filtered_valid_dataset = valid_dataset_q_aware.unbatch().filter(lambda _, y: y == 115)
+filtered_valid_dataset = valid_dataset_final.unbatch().filter(lambda _, y: y == 115)
 
 c_code = ""
 for i_value, o_value in filtered_valid_dataset:
