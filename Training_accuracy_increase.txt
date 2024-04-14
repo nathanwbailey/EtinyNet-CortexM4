@@ -1,0 +1,829 @@
+2024-04-14 13:02:33.312748: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-04-14 13:02:33.312837: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-04-14 13:02:33.313965: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-04-14 13:02:33.320154: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-04-14 13:02:34.140506: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-04-14 13:02:34.833767: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 13:02:34.871605: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 13:02:34.871879: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+Num GPUs Available:  1
+Found 100000 files belonging to 200 classes.
+2024-04-14 13:02:38.858250: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 13:02:38.858724: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 13:02:38.859074: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 13:02:38.950873: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 13:02:38.951180: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 13:02:38.951435: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 13:02:38.951596: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5484 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1
+Found 10000 files belonging to 200 classes.
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 224, 224, 3)]     0         
+                                                                 
+ conv2d (Conv2D)             (None, 111, 111, 24)      672       
+                                                                 
+ batch_normalization (Batch  (None, 111, 111, 24)      96        
+ Normalization)                                                  
+                                                                 
+ activation (Activation)     (None, 111, 111, 24)      0         
+                                                                 
+ linear_bottleneck_block (L  (None, 56, 56, 24)        1368      
+ inearBottleneckBlock)                                           
+                                                                 
+ linear_bottleneck_block_1   (None, 56, 56, 24)        1368      
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_2   (None, 56, 56, 24)        1368      
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_3   (None, 56, 56, 24)        1368      
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_4   (None, 28, 28, 96)        4464      
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_5   (None, 28, 28, 96)        12384     
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_6   (None, 28, 28, 96)        12384     
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_7   (None, 28, 28, 96)        12384     
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_8   (None, 14, 14, 168)       20664     
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_9   (None, 14, 14, 168)       33768     
+ (LinearBottleneckBlock)                                         
+                                                                 
+ linear_bottleneck_block_10  (None, 14, 14, 168)       33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_11  (None, 7, 7, 192)         38256     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_12  (None, 7, 7, 384)         83712     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ global_average_pooling2d (  (None, 384)               0         
+ GlobalAveragePooling2D)                                         
+                                                                 
+ dropout (Dropout)           (None, 384)               0         
+                                                                 
+ dense (Dense)               (None, 200)               77000     
+                                                                 
+=================================================================
+Total params: 335024 (1.28 MB)
+Trainable params: 326336 (1.24 MB)
+Non-trainable params: 8688 (33.94 KB)
+_________________________________________________________________
+Epoch 1/100
+2024-04-14 13:03:23.588722: I external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:454] Loaded cuDNN version 8904
+2024-04-14 13:03:25.706606: I external/local_xla/xla/service/service.cc:168] XLA service 0x56167d74f740 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-04-14 13:03:25.706679: I external/local_xla/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce GTX 1060 6GB, Compute Capability 6.1
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1713096205.762936  193209 device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+782/782 - 249s - loss: 4.7937 - Top-1 Accuracy: 0.0460 - Top-5 Accuracy: 0.1550 - val_loss: 5.2377 - val_Top-1 Accuracy: 0.0490 - val_Top-5 Accuracy: 0.1654 - lr: 0.1000 - 249s/epoch - 318ms/step
+Epoch 2/100
+782/782 - 233s - loss: 4.0507 - Top-1 Accuracy: 0.1230 - Top-5 Accuracy: 0.3327 - val_loss: 3.9901 - val_Top-1 Accuracy: 0.1410 - val_Top-5 Accuracy: 0.3636 - lr: 0.1000 - 233s/epoch - 298ms/step
+Epoch 3/100
+782/782 - 233s - loss: 3.6157 - Top-1 Accuracy: 0.1861 - Top-5 Accuracy: 0.4386 - val_loss: 3.9247 - val_Top-1 Accuracy: 0.1668 - val_Top-5 Accuracy: 0.3903 - lr: 0.1000 - 233s/epoch - 297ms/step
+Epoch 4/100
+782/782 - 233s - loss: 3.3444 - Top-1 Accuracy: 0.2339 - Top-5 Accuracy: 0.5012 - val_loss: 3.5055 - val_Top-1 Accuracy: 0.2101 - val_Top-5 Accuracy: 0.4633 - lr: 0.1000 - 233s/epoch - 298ms/step
+Epoch 5/100
+782/782 - 233s - loss: 3.1528 - Top-1 Accuracy: 0.2695 - Top-5 Accuracy: 0.5446 - val_loss: 3.2033 - val_Top-1 Accuracy: 0.2651 - val_Top-5 Accuracy: 0.5308 - lr: 0.1000 - 233s/epoch - 298ms/step
+Epoch 6/100
+782/782 - 235s - loss: 2.9996 - Top-1 Accuracy: 0.2940 - Top-5 Accuracy: 0.5792 - val_loss: 3.1020 - val_Top-1 Accuracy: 0.2811 - val_Top-5 Accuracy: 0.5574 - lr: 0.1000 - 235s/epoch - 301ms/step
+Epoch 7/100
+782/782 - 234s - loss: 2.8679 - Top-1 Accuracy: 0.3207 - Top-5 Accuracy: 0.6050 - val_loss: 2.9877 - val_Top-1 Accuracy: 0.3074 - val_Top-5 Accuracy: 0.5823 - lr: 0.1000 - 234s/epoch - 299ms/step
+Epoch 8/100
+782/782 - 233s - loss: 2.7594 - Top-1 Accuracy: 0.3414 - Top-5 Accuracy: 0.6280 - val_loss: 3.0438 - val_Top-1 Accuracy: 0.2976 - val_Top-5 Accuracy: 0.5714 - lr: 0.1000 - 233s/epoch - 297ms/step
+Epoch 9/100
+782/782 - 233s - loss: 2.6665 - Top-1 Accuracy: 0.3598 - Top-5 Accuracy: 0.6462 - val_loss: 2.9117 - val_Top-1 Accuracy: 0.3197 - val_Top-5 Accuracy: 0.6074 - lr: 0.1000 - 233s/epoch - 299ms/step
+Epoch 10/100
+782/782 - 233s - loss: 2.5863 - Top-1 Accuracy: 0.3757 - Top-5 Accuracy: 0.6635 - val_loss: 2.9590 - val_Top-1 Accuracy: 0.3232 - val_Top-5 Accuracy: 0.5965 - lr: 0.1000 - 233s/epoch - 299ms/step
+Epoch 11/100
+782/782 - 233s - loss: 2.5264 - Top-1 Accuracy: 0.3881 - Top-5 Accuracy: 0.6755 - val_loss: 2.8004 - val_Top-1 Accuracy: 0.3497 - val_Top-5 Accuracy: 0.6271 - lr: 0.1000 - 233s/epoch - 298ms/step
+Epoch 12/100
+782/782 - 233s - loss: 2.4614 - Top-1 Accuracy: 0.4016 - Top-5 Accuracy: 0.6866 - val_loss: 2.7216 - val_Top-1 Accuracy: 0.3570 - val_Top-5 Accuracy: 0.6356 - lr: 0.1000 - 233s/epoch - 298ms/step
+Epoch 13/100
+782/782 - 233s - loss: 2.4117 - Top-1 Accuracy: 0.4108 - Top-5 Accuracy: 0.6952 - val_loss: 3.0369 - val_Top-1 Accuracy: 0.3167 - val_Top-5 Accuracy: 0.5861 - lr: 0.1000 - 233s/epoch - 297ms/step
+Epoch 14/100
+782/782 - 233s - loss: 2.3574 - Top-1 Accuracy: 0.4207 - Top-5 Accuracy: 0.7060 - val_loss: 2.8010 - val_Top-1 Accuracy: 0.3462 - val_Top-5 Accuracy: 0.6250 - lr: 0.1000 - 233s/epoch - 298ms/step
+Epoch 15/100
+
+Epoch 15: ReduceLROnPlateau reducing learning rate to 0.010000000149011612.
+782/782 - 232s - loss: 2.3122 - Top-1 Accuracy: 0.4309 - Top-5 Accuracy: 0.7145 - val_loss: 2.8224 - val_Top-1 Accuracy: 0.3510 - val_Top-5 Accuracy: 0.6289 - lr: 0.1000 - 232s/epoch - 297ms/step
+Epoch 16/100
+782/782 - 234s - loss: 2.1032 - Top-1 Accuracy: 0.4755 - Top-5 Accuracy: 0.7515 - val_loss: 2.2115 - val_Top-1 Accuracy: 0.4651 - val_Top-5 Accuracy: 0.7337 - lr: 0.0100 - 234s/epoch - 299ms/step
+Epoch 17/100
+782/782 - 233s - loss: 2.0153 - Top-1 Accuracy: 0.4940 - Top-5 Accuracy: 0.7671 - val_loss: 2.1943 - val_Top-1 Accuracy: 0.4643 - val_Top-5 Accuracy: 0.7375 - lr: 0.0100 - 233s/epoch - 298ms/step
+Epoch 18/100
+782/782 - 234s - loss: 1.9839 - Top-1 Accuracy: 0.4993 - Top-5 Accuracy: 0.7708 - val_loss: 2.1859 - val_Top-1 Accuracy: 0.4691 - val_Top-5 Accuracy: 0.7402 - lr: 0.0100 - 234s/epoch - 299ms/step
+Epoch 19/100
+782/782 - 234s - loss: 1.9581 - Top-1 Accuracy: 0.5053 - Top-5 Accuracy: 0.7767 - val_loss: 2.1820 - val_Top-1 Accuracy: 0.4683 - val_Top-5 Accuracy: 0.7400 - lr: 0.0100 - 234s/epoch - 299ms/step
+Epoch 20/100
+782/782 - 233s - loss: 1.9392 - Top-1 Accuracy: 0.5102 - Top-5 Accuracy: 0.7779 - val_loss: 2.1855 - val_Top-1 Accuracy: 0.4686 - val_Top-5 Accuracy: 0.7402 - lr: 0.0100 - 233s/epoch - 298ms/step
+Epoch 21/100
+782/782 - 234s - loss: 1.9222 - Top-1 Accuracy: 0.5125 - Top-5 Accuracy: 0.7826 - val_loss: 2.1841 - val_Top-1 Accuracy: 0.4693 - val_Top-5 Accuracy: 0.7402 - lr: 0.0100 - 234s/epoch - 299ms/step
+Epoch 22/100
+782/782 - 233s - loss: 1.9062 - Top-1 Accuracy: 0.5157 - Top-5 Accuracy: 0.7840 - val_loss: 2.1806 - val_Top-1 Accuracy: 0.4706 - val_Top-5 Accuracy: 0.7388 - lr: 0.0100 - 233s/epoch - 298ms/step
+Epoch 23/100
+782/782 - 233s - loss: 1.8869 - Top-1 Accuracy: 0.5207 - Top-5 Accuracy: 0.7878 - val_loss: 2.1981 - val_Top-1 Accuracy: 0.4682 - val_Top-5 Accuracy: 0.7384 - lr: 0.0100 - 233s/epoch - 298ms/step
+Epoch 24/100
+782/782 - 233s - loss: 1.8785 - Top-1 Accuracy: 0.5218 - Top-5 Accuracy: 0.7894 - val_loss: 2.1946 - val_Top-1 Accuracy: 0.4721 - val_Top-5 Accuracy: 0.7373 - lr: 0.0100 - 233s/epoch - 298ms/step
+Epoch 25/100
+782/782 - 234s - loss: 1.8644 - Top-1 Accuracy: 0.5265 - Top-5 Accuracy: 0.7913 - val_loss: 2.1777 - val_Top-1 Accuracy: 0.4731 - val_Top-5 Accuracy: 0.7399 - lr: 0.0100 - 234s/epoch - 299ms/step
+Epoch 26/100
+782/782 - 233s - loss: 1.8559 - Top-1 Accuracy: 0.5249 - Top-5 Accuracy: 0.7931 - val_loss: 2.2076 - val_Top-1 Accuracy: 0.4706 - val_Top-5 Accuracy: 0.7347 - lr: 0.0100 - 233s/epoch - 297ms/step
+Epoch 27/100
+782/782 - 233s - loss: 1.8433 - Top-1 Accuracy: 0.5288 - Top-5 Accuracy: 0.7951 - val_loss: 2.1905 - val_Top-1 Accuracy: 0.4724 - val_Top-5 Accuracy: 0.7405 - lr: 0.0100 - 233s/epoch - 298ms/step
+Epoch 28/100
+
+Epoch 28: ReduceLROnPlateau reducing learning rate to 0.0009999999776482583.
+782/782 - 232s - loss: 1.8300 - Top-1 Accuracy: 0.5327 - Top-5 Accuracy: 0.7969 - val_loss: 2.2099 - val_Top-1 Accuracy: 0.4707 - val_Top-5 Accuracy: 0.7364 - lr: 0.0100 - 232s/epoch - 297ms/step
+Epoch 29/100
+782/782 - 235s - loss: 1.7942 - Top-1 Accuracy: 0.5393 - Top-5 Accuracy: 0.8029 - val_loss: 2.1418 - val_Top-1 Accuracy: 0.4808 - val_Top-5 Accuracy: 0.7481 - lr: 1.0000e-03 - 235s/epoch - 301ms/step
+Epoch 30/100
+782/782 - 234s - loss: 1.7912 - Top-1 Accuracy: 0.5423 - Top-5 Accuracy: 0.8037 - val_loss: 2.1388 - val_Top-1 Accuracy: 0.4821 - val_Top-5 Accuracy: 0.7490 - lr: 1.0000e-03 - 234s/epoch - 299ms/step
+Epoch 31/100
+782/782 - 233s - loss: 1.7846 - Top-1 Accuracy: 0.5419 - Top-5 Accuracy: 0.8048 - val_loss: 2.1391 - val_Top-1 Accuracy: 0.4821 - val_Top-5 Accuracy: 0.7480 - lr: 1.0000e-03 - 233s/epoch - 298ms/step
+Epoch 32/100
+782/782 - 233s - loss: 1.7805 - Top-1 Accuracy: 0.5425 - Top-5 Accuracy: 0.8058 - val_loss: 2.1376 - val_Top-1 Accuracy: 0.4827 - val_Top-5 Accuracy: 0.7496 - lr: 1.0000e-03 - 233s/epoch - 299ms/step
+Epoch 33/100
+782/782 - 233s - loss: 1.7781 - Top-1 Accuracy: 0.5429 - Top-5 Accuracy: 0.8061 - val_loss: 2.1376 - val_Top-1 Accuracy: 0.4840 - val_Top-5 Accuracy: 0.7490 - lr: 1.0000e-03 - 233s/epoch - 298ms/step
+Epoch 34/100
+782/782 - 233s - loss: 1.7697 - Top-1 Accuracy: 0.5453 - Top-5 Accuracy: 0.8073 - val_loss: 2.1368 - val_Top-1 Accuracy: 0.4832 - val_Top-5 Accuracy: 0.7498 - lr: 1.0000e-03 - 233s/epoch - 298ms/step
+Epoch 35/100
+782/782 - 233s - loss: 1.7719 - Top-1 Accuracy: 0.5459 - Top-5 Accuracy: 0.8062 - val_loss: 2.1380 - val_Top-1 Accuracy: 0.4852 - val_Top-5 Accuracy: 0.7492 - lr: 1.0000e-03 - 233s/epoch - 297ms/step
+Epoch 36/100
+782/782 - 232s - loss: 1.7682 - Top-1 Accuracy: 0.5435 - Top-5 Accuracy: 0.8077 - val_loss: 2.1388 - val_Top-1 Accuracy: 0.4835 - val_Top-5 Accuracy: 0.7482 - lr: 1.0000e-03 - 232s/epoch - 297ms/step
+Epoch 37/100
+
+Epoch 37: ReduceLROnPlateau reducing learning rate to 9.999999310821295e-05.
+782/782 - 234s - loss: 1.7693 - Top-1 Accuracy: 0.5446 - Top-5 Accuracy: 0.8077 - val_loss: 2.1377 - val_Top-1 Accuracy: 0.4847 - val_Top-5 Accuracy: 0.7484 - lr: 1.0000e-03 - 234s/epoch - 299ms/step
+Epoch 38/100
+782/782 - 233s - loss: 1.7636 - Top-1 Accuracy: 0.5464 - Top-5 Accuracy: 0.8081 - val_loss: 2.1372 - val_Top-1 Accuracy: 0.4836 - val_Top-5 Accuracy: 0.7492 - lr: 1.0000e-04 - 233s/epoch - 298ms/step
+Epoch 39/100
+782/782 - 233s - loss: 1.7604 - Top-1 Accuracy: 0.5475 - Top-5 Accuracy: 0.8092 - val_loss: 2.1375 - val_Top-1 Accuracy: 0.4840 - val_Top-5 Accuracy: 0.7488 - lr: 1.0000e-04 - 233s/epoch - 298ms/step
+Epoch 40/100
+
+Epoch 40: ReduceLROnPlateau reducing learning rate to 9.999999019782991e-06.
+782/782 - 234s - loss: 1.7608 - Top-1 Accuracy: 0.5466 - Top-5 Accuracy: 0.8092 - val_loss: 2.1371 - val_Top-1 Accuracy: 0.4837 - val_Top-5 Accuracy: 0.7490 - lr: 1.0000e-04 - 234s/epoch - 299ms/step
+Epoch 41/100
+782/782 - 235s - loss: 1.7666 - Top-1 Accuracy: 0.5470 - Top-5 Accuracy: 0.8081 - val_loss: 2.1372 - val_Top-1 Accuracy: 0.4841 - val_Top-5 Accuracy: 0.7495 - lr: 1.0000e-05 - 235s/epoch - 301ms/step
+Epoch 42/100
+782/782 - 233s - loss: 1.7616 - Top-1 Accuracy: 0.5469 - Top-5 Accuracy: 0.8093 - val_loss: 2.1369 - val_Top-1 Accuracy: 0.4841 - val_Top-5 Accuracy: 0.7490 - lr: 1.0000e-05 - 233s/epoch - 298ms/step
+Epoch 43/100
+
+Epoch 43: ReduceLROnPlateau reducing learning rate to 9.99999883788405e-07.
+782/782 - 233s - loss: 1.7595 - Top-1 Accuracy: 0.5493 - Top-5 Accuracy: 0.8085 - val_loss: 2.1373 - val_Top-1 Accuracy: 0.4839 - val_Top-5 Accuracy: 0.7494 - lr: 1.0000e-05 - 233s/epoch - 297ms/step
+Epoch 44/100
+782/782 - 233s - loss: 1.7568 - Top-1 Accuracy: 0.5490 - Top-5 Accuracy: 0.8087 - val_loss: 2.1372 - val_Top-1 Accuracy: 0.4835 - val_Top-5 Accuracy: 0.7491 - lr: 1.0000e-06 - 233s/epoch - 298ms/step
+Epoch 44: early stopping
+Found 100000 files belonging to 200 classes.
+Found 10000 files belonging to 200 classes.
+Model: "model_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_2 (InputLayer)        [(None, 112, 112, 3)]     0         
+                                                                 
+ conv2d_14 (Conv2D)          (None, 55, 55, 24)        672       
+                                                                 
+ batch_normalization_40 (Ba  (None, 55, 55, 24)        96        
+ tchNormalization)                                               
+                                                                 
+ activation_14 (Activation)  (None, 55, 55, 24)        0         
+                                                                 
+ linear_bottleneck_block_13  (None, 28, 28, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_14  (None, 28, 28, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_15  (None, 28, 28, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_16  (None, 28, 28, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_17  (None, 14, 14, 96)        4464      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_18  (None, 14, 14, 96)        12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_19  (None, 14, 14, 96)        12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_20  (None, 14, 14, 96)        12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_21  (None, 7, 7, 168)         20664     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_22  (None, 7, 7, 168)         33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_23  (None, 7, 7, 168)         33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_24  (None, 4, 4, 192)         38256     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_25  (None, 4, 4, 384)         83712     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ global_average_pooling2d_1  (None, 384)               0         
+  (GlobalAveragePooling2D)                                       
+                                                                 
+ dropout_1 (Dropout)         (None, 384)               0         
+                                                                 
+ dense_1 (Dense)             (None, 200)               77000     
+                                                                 
+=================================================================
+Total params: 335024 (1.28 MB)
+Trainable params: 326336 (1.24 MB)
+Non-trainable params: 8688 (33.94 KB)
+_________________________________________________________________
+Epoch 1/100
+782/782 - 79s - loss: 3.0777 - Top-1 Accuracy: 0.2906 - Top-5 Accuracy: 0.5651 - val_loss: 3.6703 - val_Top-1 Accuracy: 0.2182 - val_Top-5 Accuracy: 0.4614 - lr: 0.1000 - 79s/epoch - 101ms/step
+Epoch 2/100
+782/782 - 67s - loss: 2.8050 - Top-1 Accuracy: 0.3366 - Top-5 Accuracy: 0.6204 - val_loss: 3.2055 - val_Top-1 Accuracy: 0.2733 - val_Top-5 Accuracy: 0.5417 - lr: 0.1000 - 67s/epoch - 85ms/step
+Epoch 3/100
+782/782 - 67s - loss: 2.7059 - Top-1 Accuracy: 0.3544 - Top-5 Accuracy: 0.6399 - val_loss: 2.9399 - val_Top-1 Accuracy: 0.3220 - val_Top-5 Accuracy: 0.5906 - lr: 0.1000 - 67s/epoch - 85ms/step
+Epoch 4/100
+782/782 - 67s - loss: 2.6365 - Top-1 Accuracy: 0.3677 - Top-5 Accuracy: 0.6547 - val_loss: 3.1127 - val_Top-1 Accuracy: 0.3000 - val_Top-5 Accuracy: 0.5598 - lr: 0.1000 - 67s/epoch - 85ms/step
+Epoch 5/100
+782/782 - 67s - loss: 2.5709 - Top-1 Accuracy: 0.3797 - Top-5 Accuracy: 0.6649 - val_loss: 3.1973 - val_Top-1 Accuracy: 0.2837 - val_Top-5 Accuracy: 0.5487 - lr: 0.1000 - 67s/epoch - 85ms/step
+Epoch 6/100
+782/782 - 67s - loss: 2.5253 - Top-1 Accuracy: 0.3901 - Top-5 Accuracy: 0.6751 - val_loss: 2.9181 - val_Top-1 Accuracy: 0.3312 - val_Top-5 Accuracy: 0.6006 - lr: 0.1000 - 67s/epoch - 85ms/step
+Epoch 7/100
+782/782 - 67s - loss: 2.4796 - Top-1 Accuracy: 0.3972 - Top-5 Accuracy: 0.6838 - val_loss: 3.1845 - val_Top-1 Accuracy: 0.2866 - val_Top-5 Accuracy: 0.5571 - lr: 0.1000 - 67s/epoch - 85ms/step
+Epoch 8/100
+782/782 - 67s - loss: 2.4476 - Top-1 Accuracy: 0.4044 - Top-5 Accuracy: 0.6900 - val_loss: 3.1799 - val_Top-1 Accuracy: 0.2925 - val_Top-5 Accuracy: 0.5596 - lr: 0.1000 - 67s/epoch - 85ms/step
+Epoch 9/100
+
+Epoch 9: ReduceLROnPlateau reducing learning rate to 0.010000000149011612.
+782/782 - 66s - loss: 2.4139 - Top-1 Accuracy: 0.4105 - Top-5 Accuracy: 0.6965 - val_loss: 3.1596 - val_Top-1 Accuracy: 0.2951 - val_Top-5 Accuracy: 0.5603 - lr: 0.1000 - 66s/epoch - 85ms/step
+Epoch 10/100
+782/782 - 67s - loss: 2.1997 - Top-1 Accuracy: 0.4546 - Top-5 Accuracy: 0.7341 - val_loss: 2.4329 - val_Top-1 Accuracy: 0.4244 - val_Top-5 Accuracy: 0.6911 - lr: 0.0100 - 67s/epoch - 85ms/step
+Epoch 11/100
+782/782 - 67s - loss: 2.1149 - Top-1 Accuracy: 0.4721 - Top-5 Accuracy: 0.7487 - val_loss: 2.4101 - val_Top-1 Accuracy: 0.4286 - val_Top-5 Accuracy: 0.6989 - lr: 0.0100 - 67s/epoch - 85ms/step
+Epoch 12/100
+782/782 - 67s - loss: 2.0792 - Top-1 Accuracy: 0.4807 - Top-5 Accuracy: 0.7554 - val_loss: 2.4175 - val_Top-1 Accuracy: 0.4281 - val_Top-5 Accuracy: 0.6975 - lr: 0.0100 - 67s/epoch - 85ms/step
+Epoch 13/100
+782/782 - 66s - loss: 2.0587 - Top-1 Accuracy: 0.4849 - Top-5 Accuracy: 0.7580 - val_loss: 2.4167 - val_Top-1 Accuracy: 0.4292 - val_Top-5 Accuracy: 0.6963 - lr: 0.0100 - 66s/epoch - 85ms/step
+Epoch 14/100
+782/782 - 66s - loss: 2.0409 - Top-1 Accuracy: 0.4866 - Top-5 Accuracy: 0.7615 - val_loss: 2.4084 - val_Top-1 Accuracy: 0.4331 - val_Top-5 Accuracy: 0.6978 - lr: 0.0100 - 66s/epoch - 85ms/step
+Epoch 15/100
+782/782 - 66s - loss: 2.0248 - Top-1 Accuracy: 0.4917 - Top-5 Accuracy: 0.7639 - val_loss: 2.4138 - val_Top-1 Accuracy: 0.4308 - val_Top-5 Accuracy: 0.6984 - lr: 0.0100 - 66s/epoch - 85ms/step
+Epoch 16/100
+782/782 - 67s - loss: 2.0051 - Top-1 Accuracy: 0.4950 - Top-5 Accuracy: 0.7679 - val_loss: 2.4123 - val_Top-1 Accuracy: 0.4305 - val_Top-5 Accuracy: 0.6952 - lr: 0.0100 - 67s/epoch - 85ms/step
+Epoch 17/100
+
+Epoch 17: ReduceLROnPlateau reducing learning rate to 0.0009999999776482583.
+782/782 - 66s - loss: 1.9997 - Top-1 Accuracy: 0.4963 - Top-5 Accuracy: 0.7688 - val_loss: 2.4098 - val_Top-1 Accuracy: 0.4304 - val_Top-5 Accuracy: 0.6973 - lr: 0.0100 - 66s/epoch - 85ms/step
+Epoch 18/100
+782/782 - 67s - loss: 1.9666 - Top-1 Accuracy: 0.5024 - Top-5 Accuracy: 0.7738 - val_loss: 2.3776 - val_Top-1 Accuracy: 0.4399 - val_Top-5 Accuracy: 0.7043 - lr: 1.0000e-03 - 67s/epoch - 85ms/step
+Epoch 19/100
+782/782 - 66s - loss: 1.9523 - Top-1 Accuracy: 0.5047 - Top-5 Accuracy: 0.7770 - val_loss: 2.3762 - val_Top-1 Accuracy: 0.4385 - val_Top-5 Accuracy: 0.7045 - lr: 1.0000e-03 - 66s/epoch - 85ms/step
+Epoch 20/100
+782/782 - 67s - loss: 1.9530 - Top-1 Accuracy: 0.5066 - Top-5 Accuracy: 0.7758 - val_loss: 2.3755 - val_Top-1 Accuracy: 0.4380 - val_Top-5 Accuracy: 0.7043 - lr: 1.0000e-03 - 67s/epoch - 85ms/step
+Epoch 21/100
+782/782 - 66s - loss: 1.9474 - Top-1 Accuracy: 0.5070 - Top-5 Accuracy: 0.7759 - val_loss: 2.3747 - val_Top-1 Accuracy: 0.4398 - val_Top-5 Accuracy: 0.7048 - lr: 1.0000e-03 - 66s/epoch - 85ms/step
+Epoch 22/100
+782/782 - 67s - loss: 1.9445 - Top-1 Accuracy: 0.5070 - Top-5 Accuracy: 0.7786 - val_loss: 2.3744 - val_Top-1 Accuracy: 0.4398 - val_Top-5 Accuracy: 0.7057 - lr: 1.0000e-03 - 67s/epoch - 85ms/step
+Epoch 23/100
+782/782 - 67s - loss: 1.9422 - Top-1 Accuracy: 0.5063 - Top-5 Accuracy: 0.7779 - val_loss: 2.3745 - val_Top-1 Accuracy: 0.4403 - val_Top-5 Accuracy: 0.7057 - lr: 1.0000e-03 - 67s/epoch - 85ms/step
+Epoch 24/100
+782/782 - 67s - loss: 1.9350 - Top-1 Accuracy: 0.5096 - Top-5 Accuracy: 0.7804 - val_loss: 2.3743 - val_Top-1 Accuracy: 0.4390 - val_Top-5 Accuracy: 0.7052 - lr: 1.0000e-03 - 67s/epoch - 85ms/step
+Epoch 25/100
+782/782 - 66s - loss: 1.9378 - Top-1 Accuracy: 0.5094 - Top-5 Accuracy: 0.7785 - val_loss: 2.3738 - val_Top-1 Accuracy: 0.4392 - val_Top-5 Accuracy: 0.7063 - lr: 1.0000e-03 - 66s/epoch - 85ms/step
+Epoch 26/100
+782/782 - 67s - loss: 1.9389 - Top-1 Accuracy: 0.5083 - Top-5 Accuracy: 0.7770 - val_loss: 2.3758 - val_Top-1 Accuracy: 0.4384 - val_Top-5 Accuracy: 0.7062 - lr: 1.0000e-03 - 67s/epoch - 85ms/step
+Epoch 27/100
+782/782 - 67s - loss: 1.9332 - Top-1 Accuracy: 0.5092 - Top-5 Accuracy: 0.7795 - val_loss: 2.3768 - val_Top-1 Accuracy: 0.4399 - val_Top-5 Accuracy: 0.7074 - lr: 1.0000e-03 - 67s/epoch - 85ms/step
+Epoch 28/100
+
+Epoch 28: ReduceLROnPlateau reducing learning rate to 9.999999310821295e-05.
+782/782 - 67s - loss: 1.9323 - Top-1 Accuracy: 0.5095 - Top-5 Accuracy: 0.7804 - val_loss: 2.3758 - val_Top-1 Accuracy: 0.4394 - val_Top-5 Accuracy: 0.7066 - lr: 1.0000e-03 - 67s/epoch - 85ms/step
+Epoch 29/100
+782/782 - 67s - loss: 1.9232 - Top-1 Accuracy: 0.5118 - Top-5 Accuracy: 0.7814 - val_loss: 2.3755 - val_Top-1 Accuracy: 0.4389 - val_Top-5 Accuracy: 0.7055 - lr: 1.0000e-04 - 67s/epoch - 85ms/step
+Epoch 30/100
+782/782 - 67s - loss: 1.9316 - Top-1 Accuracy: 0.5100 - Top-5 Accuracy: 0.7800 - val_loss: 2.3754 - val_Top-1 Accuracy: 0.4384 - val_Top-5 Accuracy: 0.7059 - lr: 1.0000e-04 - 67s/epoch - 86ms/step
+Epoch 31/100
+
+Epoch 31: ReduceLROnPlateau reducing learning rate to 9.999999019782991e-06.
+782/782 - 67s - loss: 1.9258 - Top-1 Accuracy: 0.5115 - Top-5 Accuracy: 0.7808 - val_loss: 2.3749 - val_Top-1 Accuracy: 0.4387 - val_Top-5 Accuracy: 0.7056 - lr: 1.0000e-04 - 67s/epoch - 85ms/step
+Epoch 32/100
+782/782 - 66s - loss: 1.9304 - Top-1 Accuracy: 0.5103 - Top-5 Accuracy: 0.7787 - val_loss: 2.3750 - val_Top-1 Accuracy: 0.4389 - val_Top-5 Accuracy: 0.7054 - lr: 1.0000e-05 - 66s/epoch - 85ms/step
+Epoch 33/100
+782/782 - 66s - loss: 1.9278 - Top-1 Accuracy: 0.5106 - Top-5 Accuracy: 0.7809 - val_loss: 2.3750 - val_Top-1 Accuracy: 0.4389 - val_Top-5 Accuracy: 0.7064 - lr: 1.0000e-05 - 66s/epoch - 85ms/step
+Epoch 34/100
+
+Epoch 34: ReduceLROnPlateau reducing learning rate to 9.99999883788405e-07.
+782/782 - 67s - loss: 1.9271 - Top-1 Accuracy: 0.5113 - Top-5 Accuracy: 0.7812 - val_loss: 2.3751 - val_Top-1 Accuracy: 0.4378 - val_Top-5 Accuracy: 0.7058 - lr: 1.0000e-05 - 67s/epoch - 85ms/step
+Epoch 35/100
+782/782 - 67s - loss: 1.9273 - Top-1 Accuracy: 0.5116 - Top-5 Accuracy: 0.7812 - val_loss: 2.3753 - val_Top-1 Accuracy: 0.4383 - val_Top-5 Accuracy: 0.7067 - lr: 1.0000e-06 - 67s/epoch - 85ms/step
+Epoch 35: early stopping
+Found 100000 files belonging to 200 classes.
+Found 10000 files belonging to 200 classes.
+Model: "model_2"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_3 (InputLayer)        [(None, 96, 96, 3)]       0         
+                                                                 
+ conv2d_28 (Conv2D)          (None, 47, 47, 24)        672       
+                                                                 
+ batch_normalization_80 (Ba  (None, 47, 47, 24)        96        
+ tchNormalization)                                               
+                                                                 
+ activation_28 (Activation)  (None, 47, 47, 24)        0         
+                                                                 
+ linear_bottleneck_block_26  (None, 24, 24, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_27  (None, 24, 24, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_28  (None, 24, 24, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_29  (None, 24, 24, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_30  (None, 12, 12, 96)        4464      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_31  (None, 12, 12, 96)        12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_32  (None, 12, 12, 96)        12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_33  (None, 12, 12, 96)        12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_34  (None, 6, 6, 168)         20664     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_35  (None, 6, 6, 168)         33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_36  (None, 6, 6, 168)         33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_37  (None, 3, 3, 192)         38256     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_38  (None, 3, 3, 384)         83712     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ global_average_pooling2d_2  (None, 384)               0         
+  (GlobalAveragePooling2D)                                       
+                                                                 
+ dropout_2 (Dropout)         (None, 384)               0         
+                                                                 
+ dense_2 (Dense)             (None, 200)               77000     
+                                                                 
+=================================================================
+Total params: 335024 (1.28 MB)
+Trainable params: 326336 (1.24 MB)
+Non-trainable params: 8688 (33.94 KB)
+_________________________________________________________________
+Epoch 1/100
+782/782 - 64s - loss: 2.6700 - Top-1 Accuracy: 0.3614 - Top-5 Accuracy: 0.6469 - val_loss: 3.2715 - val_Top-1 Accuracy: 0.2788 - val_Top-5 Accuracy: 0.5324 - lr: 0.1000 - 64s/epoch - 82ms/step
+Epoch 2/100
+782/782 - 52s - loss: 2.5690 - Top-1 Accuracy: 0.3832 - Top-5 Accuracy: 0.6647 - val_loss: 3.1548 - val_Top-1 Accuracy: 0.2986 - val_Top-5 Accuracy: 0.5739 - lr: 0.1000 - 52s/epoch - 66ms/step
+Epoch 3/100
+782/782 - 51s - loss: 2.5243 - Top-1 Accuracy: 0.3896 - Top-5 Accuracy: 0.6730 - val_loss: 3.2456 - val_Top-1 Accuracy: 0.2765 - val_Top-5 Accuracy: 0.5385 - lr: 0.1000 - 51s/epoch - 66ms/step
+Epoch 4/100
+782/782 - 52s - loss: 2.4759 - Top-1 Accuracy: 0.3986 - Top-5 Accuracy: 0.6843 - val_loss: 2.9895 - val_Top-1 Accuracy: 0.3215 - val_Top-5 Accuracy: 0.5857 - lr: 0.1000 - 52s/epoch - 66ms/step
+Epoch 5/100
+782/782 - 52s - loss: 2.4385 - Top-1 Accuracy: 0.4059 - Top-5 Accuracy: 0.6893 - val_loss: 2.8021 - val_Top-1 Accuracy: 0.3538 - val_Top-5 Accuracy: 0.6276 - lr: 0.1000 - 52s/epoch - 66ms/step
+Epoch 6/100
+782/782 - 52s - loss: 2.4074 - Top-1 Accuracy: 0.4124 - Top-5 Accuracy: 0.6957 - val_loss: 2.7774 - val_Top-1 Accuracy: 0.3499 - val_Top-5 Accuracy: 0.6292 - lr: 0.1000 - 52s/epoch - 66ms/step
+Epoch 7/100
+782/782 - 52s - loss: 2.3762 - Top-1 Accuracy: 0.4171 - Top-5 Accuracy: 0.7012 - val_loss: 2.7787 - val_Top-1 Accuracy: 0.3526 - val_Top-5 Accuracy: 0.6260 - lr: 0.1000 - 52s/epoch - 66ms/step
+Epoch 8/100
+782/782 - 52s - loss: 2.3509 - Top-1 Accuracy: 0.4225 - Top-5 Accuracy: 0.7064 - val_loss: 2.7821 - val_Top-1 Accuracy: 0.3515 - val_Top-5 Accuracy: 0.6266 - lr: 0.1000 - 52s/epoch - 66ms/step
+Epoch 9/100
+
+Epoch 9: ReduceLROnPlateau reducing learning rate to 0.010000000149011612.
+782/782 - 51s - loss: 2.3186 - Top-1 Accuracy: 0.4281 - Top-5 Accuracy: 0.7105 - val_loss: 3.1014 - val_Top-1 Accuracy: 0.3015 - val_Top-5 Accuracy: 0.5765 - lr: 0.1000 - 51s/epoch - 66ms/step
+Epoch 10/100
+782/782 - 51s - loss: 2.1233 - Top-1 Accuracy: 0.4704 - Top-5 Accuracy: 0.7471 - val_loss: 2.4302 - val_Top-1 Accuracy: 0.4249 - val_Top-5 Accuracy: 0.6939 - lr: 0.0100 - 51s/epoch - 66ms/step
+Epoch 11/100
+782/782 - 52s - loss: 2.0202 - Top-1 Accuracy: 0.4922 - Top-5 Accuracy: 0.7645 - val_loss: 2.4245 - val_Top-1 Accuracy: 0.4274 - val_Top-5 Accuracy: 0.6963 - lr: 0.0100 - 52s/epoch - 66ms/step
+Epoch 12/100
+782/782 - 52s - loss: 1.9864 - Top-1 Accuracy: 0.4980 - Top-5 Accuracy: 0.7706 - val_loss: 2.4198 - val_Top-1 Accuracy: 0.4331 - val_Top-5 Accuracy: 0.6953 - lr: 0.0100 - 52s/epoch - 66ms/step
+Epoch 13/100
+782/782 - 51s - loss: 1.9636 - Top-1 Accuracy: 0.5030 - Top-5 Accuracy: 0.7746 - val_loss: 2.4213 - val_Top-1 Accuracy: 0.4319 - val_Top-5 Accuracy: 0.6979 - lr: 0.0100 - 51s/epoch - 66ms/step
+Epoch 14/100
+782/782 - 52s - loss: 1.9443 - Top-1 Accuracy: 0.5071 - Top-5 Accuracy: 0.7762 - val_loss: 2.4214 - val_Top-1 Accuracy: 0.4346 - val_Top-5 Accuracy: 0.6968 - lr: 0.0100 - 52s/epoch - 66ms/step
+Epoch 15/100
+
+Epoch 15: ReduceLROnPlateau reducing learning rate to 0.0009999999776482583.
+782/782 - 52s - loss: 1.9279 - Top-1 Accuracy: 0.5099 - Top-5 Accuracy: 0.7802 - val_loss: 2.4357 - val_Top-1 Accuracy: 0.4307 - val_Top-5 Accuracy: 0.6946 - lr: 0.0100 - 52s/epoch - 66ms/step
+Epoch 16/100
+782/782 - 52s - loss: 1.8889 - Top-1 Accuracy: 0.5182 - Top-5 Accuracy: 0.7858 - val_loss: 2.3967 - val_Top-1 Accuracy: 0.4361 - val_Top-5 Accuracy: 0.7047 - lr: 1.0000e-03 - 52s/epoch - 66ms/step
+Epoch 17/100
+782/782 - 52s - loss: 1.8870 - Top-1 Accuracy: 0.5192 - Top-5 Accuracy: 0.7860 - val_loss: 2.3939 - val_Top-1 Accuracy: 0.4357 - val_Top-5 Accuracy: 0.7041 - lr: 1.0000e-03 - 52s/epoch - 66ms/step
+Epoch 18/100
+782/782 - 52s - loss: 1.8858 - Top-1 Accuracy: 0.5192 - Top-5 Accuracy: 0.7872 - val_loss: 2.3941 - val_Top-1 Accuracy: 0.4357 - val_Top-5 Accuracy: 0.7030 - lr: 1.0000e-03 - 52s/epoch - 66ms/step
+Epoch 19/100
+782/782 - 51s - loss: 1.8760 - Top-1 Accuracy: 0.5206 - Top-5 Accuracy: 0.7891 - val_loss: 2.3938 - val_Top-1 Accuracy: 0.4368 - val_Top-5 Accuracy: 0.7042 - lr: 1.0000e-03 - 51s/epoch - 66ms/step
+Epoch 20/100
+782/782 - 52s - loss: 1.8764 - Top-1 Accuracy: 0.5202 - Top-5 Accuracy: 0.7879 - val_loss: 2.3938 - val_Top-1 Accuracy: 0.4387 - val_Top-5 Accuracy: 0.7030 - lr: 1.0000e-03 - 52s/epoch - 66ms/step
+Epoch 21/100
+782/782 - 51s - loss: 1.8715 - Top-1 Accuracy: 0.5228 - Top-5 Accuracy: 0.7884 - val_loss: 2.3934 - val_Top-1 Accuracy: 0.4366 - val_Top-5 Accuracy: 0.7040 - lr: 1.0000e-03 - 51s/epoch - 66ms/step
+Epoch 22/100
+782/782 - 52s - loss: 1.8736 - Top-1 Accuracy: 0.5214 - Top-5 Accuracy: 0.7885 - val_loss: 2.3937 - val_Top-1 Accuracy: 0.4355 - val_Top-5 Accuracy: 0.7028 - lr: 1.0000e-03 - 52s/epoch - 66ms/step
+Epoch 23/100
+782/782 - 51s - loss: 1.8695 - Top-1 Accuracy: 0.5226 - Top-5 Accuracy: 0.7901 - val_loss: 2.3942 - val_Top-1 Accuracy: 0.4358 - val_Top-5 Accuracy: 0.7034 - lr: 1.0000e-03 - 51s/epoch - 66ms/step
+Epoch 24/100
+
+Epoch 24: ReduceLROnPlateau reducing learning rate to 9.999999310821295e-05.
+782/782 - 52s - loss: 1.8649 - Top-1 Accuracy: 0.5240 - Top-5 Accuracy: 0.7892 - val_loss: 2.3947 - val_Top-1 Accuracy: 0.4370 - val_Top-5 Accuracy: 0.7043 - lr: 1.0000e-03 - 52s/epoch - 66ms/step
+Epoch 25/100
+782/782 - 52s - loss: 1.8680 - Top-1 Accuracy: 0.5219 - Top-5 Accuracy: 0.7927 - val_loss: 2.3949 - val_Top-1 Accuracy: 0.4356 - val_Top-5 Accuracy: 0.7035 - lr: 1.0000e-04 - 52s/epoch - 66ms/step
+Epoch 26/100
+782/782 - 52s - loss: 1.8639 - Top-1 Accuracy: 0.5240 - Top-5 Accuracy: 0.7896 - val_loss: 2.3949 - val_Top-1 Accuracy: 0.4355 - val_Top-5 Accuracy: 0.7042 - lr: 1.0000e-04 - 52s/epoch - 66ms/step
+Epoch 27/100
+
+Epoch 27: ReduceLROnPlateau reducing learning rate to 9.999999019782991e-06.
+782/782 - 52s - loss: 1.8589 - Top-1 Accuracy: 0.5250 - Top-5 Accuracy: 0.7919 - val_loss: 2.3951 - val_Top-1 Accuracy: 0.4356 - val_Top-5 Accuracy: 0.7038 - lr: 1.0000e-04 - 52s/epoch - 66ms/step
+Epoch 28/100
+782/782 - 52s - loss: 1.8614 - Top-1 Accuracy: 0.5245 - Top-5 Accuracy: 0.7901 - val_loss: 2.3948 - val_Top-1 Accuracy: 0.4353 - val_Top-5 Accuracy: 0.7037 - lr: 1.0000e-05 - 52s/epoch - 66ms/step
+Epoch 29/100
+782/782 - 52s - loss: 1.8599 - Top-1 Accuracy: 0.5252 - Top-5 Accuracy: 0.7922 - val_loss: 2.3949 - val_Top-1 Accuracy: 0.4358 - val_Top-5 Accuracy: 0.7036 - lr: 1.0000e-05 - 52s/epoch - 66ms/step
+Epoch 30/100
+
+Epoch 30: ReduceLROnPlateau reducing learning rate to 9.99999883788405e-07.
+782/782 - 51s - loss: 1.8593 - Top-1 Accuracy: 0.5256 - Top-5 Accuracy: 0.7917 - val_loss: 2.3947 - val_Top-1 Accuracy: 0.4351 - val_Top-5 Accuracy: 0.7035 - lr: 1.0000e-05 - 51s/epoch - 66ms/step
+Epoch 31/100
+782/782 - 52s - loss: 1.8579 - Top-1 Accuracy: 0.5260 - Top-5 Accuracy: 0.7912 - val_loss: 2.3947 - val_Top-1 Accuracy: 0.4356 - val_Top-5 Accuracy: 0.7035 - lr: 1.0000e-06 - 52s/epoch - 66ms/step
+Epoch 31: early stopping
+Found 100000 files belonging to 200 classes.
+Found 10000 files belonging to 200 classes.
+Model: "model_3"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_4 (InputLayer)        [(None, 64, 64, 3)]       0         
+                                                                 
+ conv2d_42 (Conv2D)          (None, 31, 31, 24)        672       
+                                                                 
+ batch_normalization_120 (B  (None, 31, 31, 24)        96        
+ atchNormalization)                                              
+                                                                 
+ activation_42 (Activation)  (None, 31, 31, 24)        0         
+                                                                 
+ linear_bottleneck_block_39  (None, 16, 16, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_40  (None, 16, 16, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_41  (None, 16, 16, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_42  (None, 16, 16, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_43  (None, 8, 8, 96)          4464      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_44  (None, 8, 8, 96)          12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_45  (None, 8, 8, 96)          12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_46  (None, 8, 8, 96)          12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_47  (None, 4, 4, 168)         20664     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_48  (None, 4, 4, 168)         33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_49  (None, 4, 4, 168)         33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_50  (None, 2, 2, 192)         38256     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_51  (None, 2, 2, 384)         83712     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ global_average_pooling2d_3  (None, 384)               0         
+  (GlobalAveragePooling2D)                                       
+                                                                 
+ dropout_3 (Dropout)         (None, 384)               0         
+                                                                 
+ dense_3 (Dense)             (None, 200)               77000     
+                                                                 
+=================================================================
+Total params: 335024 (1.28 MB)
+Trainable params: 326336 (1.24 MB)
+Non-trainable params: 8688 (33.94 KB)
+_________________________________________________________________
+Epoch 1/100
+782/782 - 47s - loss: 3.0656 - Top-1 Accuracy: 0.2905 - Top-5 Accuracy: 0.5666 - val_loss: 3.7510 - val_Top-1 Accuracy: 0.1963 - val_Top-5 Accuracy: 0.4339 - lr: 0.1000 - 47s/epoch - 61ms/step
+Epoch 2/100
+782/782 - 35s - loss: 2.8350 - Top-1 Accuracy: 0.3310 - Top-5 Accuracy: 0.6124 - val_loss: 3.2481 - val_Top-1 Accuracy: 0.2703 - val_Top-5 Accuracy: 0.5315 - lr: 0.1000 - 35s/epoch - 45ms/step
+Epoch 3/100
+782/782 - 35s - loss: 2.7415 - Top-1 Accuracy: 0.3468 - Top-5 Accuracy: 0.6311 - val_loss: 3.1072 - val_Top-1 Accuracy: 0.2965 - val_Top-5 Accuracy: 0.5601 - lr: 0.1000 - 35s/epoch - 44ms/step
+Epoch 4/100
+782/782 - 35s - loss: 2.6683 - Top-1 Accuracy: 0.3604 - Top-5 Accuracy: 0.6444 - val_loss: 3.1998 - val_Top-1 Accuracy: 0.2758 - val_Top-5 Accuracy: 0.5429 - lr: 0.1000 - 35s/epoch - 44ms/step
+Epoch 5/100
+782/782 - 35s - loss: 2.6117 - Top-1 Accuracy: 0.3722 - Top-5 Accuracy: 0.6574 - val_loss: 3.0155 - val_Top-1 Accuracy: 0.3091 - val_Top-5 Accuracy: 0.5871 - lr: 0.1000 - 35s/epoch - 44ms/step
+Epoch 6/100
+782/782 - 35s - loss: 2.5724 - Top-1 Accuracy: 0.3785 - Top-5 Accuracy: 0.6637 - val_loss: 2.9168 - val_Top-1 Accuracy: 0.3258 - val_Top-5 Accuracy: 0.5961 - lr: 0.1000 - 35s/epoch - 44ms/step
+Epoch 7/100
+782/782 - 35s - loss: 2.5340 - Top-1 Accuracy: 0.3882 - Top-5 Accuracy: 0.6717 - val_loss: 3.2160 - val_Top-1 Accuracy: 0.2822 - val_Top-5 Accuracy: 0.5461 - lr: 0.1000 - 35s/epoch - 45ms/step
+Epoch 8/100
+782/782 - 35s - loss: 2.5012 - Top-1 Accuracy: 0.3902 - Top-5 Accuracy: 0.6779 - val_loss: 3.5026 - val_Top-1 Accuracy: 0.2358 - val_Top-5 Accuracy: 0.4914 - lr: 0.1000 - 35s/epoch - 44ms/step
+Epoch 9/100
+
+Epoch 9: ReduceLROnPlateau reducing learning rate to 0.010000000149011612.
+782/782 - 35s - loss: 2.4749 - Top-1 Accuracy: 0.3960 - Top-5 Accuracy: 0.6828 - val_loss: 2.9520 - val_Top-1 Accuracy: 0.3192 - val_Top-5 Accuracy: 0.5929 - lr: 0.1000 - 35s/epoch - 45ms/step
+Epoch 10/100
+782/782 - 35s - loss: 2.2716 - Top-1 Accuracy: 0.4380 - Top-5 Accuracy: 0.7209 - val_loss: 2.5351 - val_Top-1 Accuracy: 0.3983 - val_Top-5 Accuracy: 0.6713 - lr: 0.0100 - 35s/epoch - 44ms/step
+Epoch 11/100
+782/782 - 35s - loss: 2.1807 - Top-1 Accuracy: 0.4579 - Top-5 Accuracy: 0.7355 - val_loss: 2.5263 - val_Top-1 Accuracy: 0.4004 - val_Top-5 Accuracy: 0.6734 - lr: 0.0100 - 35s/epoch - 44ms/step
+Epoch 12/100
+782/782 - 35s - loss: 2.1433 - Top-1 Accuracy: 0.4665 - Top-5 Accuracy: 0.7421 - val_loss: 2.5227 - val_Top-1 Accuracy: 0.4032 - val_Top-5 Accuracy: 0.6745 - lr: 0.0100 - 35s/epoch - 44ms/step
+Epoch 13/100
+782/782 - 35s - loss: 2.1230 - Top-1 Accuracy: 0.4697 - Top-5 Accuracy: 0.7458 - val_loss: 2.5292 - val_Top-1 Accuracy: 0.4021 - val_Top-5 Accuracy: 0.6754 - lr: 0.0100 - 35s/epoch - 44ms/step
+Epoch 14/100
+782/782 - 35s - loss: 2.1049 - Top-1 Accuracy: 0.4725 - Top-5 Accuracy: 0.7479 - val_loss: 2.5218 - val_Top-1 Accuracy: 0.4088 - val_Top-5 Accuracy: 0.6749 - lr: 0.0100 - 35s/epoch - 44ms/step
+Epoch 15/100
+782/782 - 35s - loss: 2.0926 - Top-1 Accuracy: 0.4755 - Top-5 Accuracy: 0.7513 - val_loss: 2.5305 - val_Top-1 Accuracy: 0.4076 - val_Top-5 Accuracy: 0.6753 - lr: 0.0100 - 35s/epoch - 44ms/step
+Epoch 16/100
+782/782 - 35s - loss: 2.0750 - Top-1 Accuracy: 0.4781 - Top-5 Accuracy: 0.7541 - val_loss: 2.5334 - val_Top-1 Accuracy: 0.4062 - val_Top-5 Accuracy: 0.6738 - lr: 0.0100 - 35s/epoch - 45ms/step
+Epoch 17/100
+
+Epoch 17: ReduceLROnPlateau reducing learning rate to 0.0009999999776482583.
+782/782 - 35s - loss: 2.0649 - Top-1 Accuracy: 0.4795 - Top-5 Accuracy: 0.7568 - val_loss: 2.5375 - val_Top-1 Accuracy: 0.4025 - val_Top-5 Accuracy: 0.6721 - lr: 0.0100 - 35s/epoch - 44ms/step
+Epoch 18/100
+782/782 - 35s - loss: 2.0383 - Top-1 Accuracy: 0.4864 - Top-5 Accuracy: 0.7611 - val_loss: 2.4966 - val_Top-1 Accuracy: 0.4136 - val_Top-5 Accuracy: 0.6801 - lr: 1.0000e-03 - 35s/epoch - 44ms/step
+Epoch 19/100
+782/782 - 35s - loss: 2.0186 - Top-1 Accuracy: 0.4896 - Top-5 Accuracy: 0.7657 - val_loss: 2.4958 - val_Top-1 Accuracy: 0.4137 - val_Top-5 Accuracy: 0.6797 - lr: 1.0000e-03 - 35s/epoch - 44ms/step
+Epoch 20/100
+782/782 - 35s - loss: 2.0200 - Top-1 Accuracy: 0.4912 - Top-5 Accuracy: 0.7655 - val_loss: 2.4966 - val_Top-1 Accuracy: 0.4134 - val_Top-5 Accuracy: 0.6795 - lr: 1.0000e-03 - 35s/epoch - 44ms/step
+Epoch 21/100
+782/782 - 35s - loss: 2.0221 - Top-1 Accuracy: 0.4895 - Top-5 Accuracy: 0.7636 - val_loss: 2.4955 - val_Top-1 Accuracy: 0.4132 - val_Top-5 Accuracy: 0.6807 - lr: 1.0000e-03 - 35s/epoch - 45ms/step
+Epoch 22/100
+782/782 - 35s - loss: 2.0163 - Top-1 Accuracy: 0.4917 - Top-5 Accuracy: 0.7646 - val_loss: 2.4947 - val_Top-1 Accuracy: 0.4143 - val_Top-5 Accuracy: 0.6817 - lr: 1.0000e-03 - 35s/epoch - 44ms/step
+Epoch 23/100
+782/782 - 35s - loss: 2.0124 - Top-1 Accuracy: 0.4917 - Top-5 Accuracy: 0.7655 - val_loss: 2.4943 - val_Top-1 Accuracy: 0.4143 - val_Top-5 Accuracy: 0.6824 - lr: 1.0000e-03 - 35s/epoch - 45ms/step
+Epoch 24/100
+782/782 - 35s - loss: 2.0090 - Top-1 Accuracy: 0.4925 - Top-5 Accuracy: 0.7666 - val_loss: 2.4953 - val_Top-1 Accuracy: 0.4124 - val_Top-5 Accuracy: 0.6812 - lr: 1.0000e-03 - 35s/epoch - 44ms/step
+Epoch 25/100
+782/782 - 35s - loss: 2.0152 - Top-1 Accuracy: 0.4902 - Top-5 Accuracy: 0.7651 - val_loss: 2.4957 - val_Top-1 Accuracy: 0.4144 - val_Top-5 Accuracy: 0.6801 - lr: 1.0000e-03 - 35s/epoch - 44ms/step
+Epoch 26/100
+
+Epoch 26: ReduceLROnPlateau reducing learning rate to 9.999999310821295e-05.
+782/782 - 35s - loss: 2.0092 - Top-1 Accuracy: 0.4917 - Top-5 Accuracy: 0.7664 - val_loss: 2.4944 - val_Top-1 Accuracy: 0.4147 - val_Top-5 Accuracy: 0.6809 - lr: 1.0000e-03 - 35s/epoch - 44ms/step
+Epoch 27/100
+782/782 - 35s - loss: 2.0037 - Top-1 Accuracy: 0.4929 - Top-5 Accuracy: 0.7658 - val_loss: 2.4953 - val_Top-1 Accuracy: 0.4135 - val_Top-5 Accuracy: 0.6822 - lr: 1.0000e-04 - 35s/epoch - 44ms/step
+Epoch 28/100
+782/782 - 35s - loss: 2.0059 - Top-1 Accuracy: 0.4926 - Top-5 Accuracy: 0.7657 - val_loss: 2.4956 - val_Top-1 Accuracy: 0.4134 - val_Top-5 Accuracy: 0.6815 - lr: 1.0000e-04 - 35s/epoch - 44ms/step
+Epoch 29/100
+
+Epoch 29: ReduceLROnPlateau reducing learning rate to 9.999999019782991e-06.
+782/782 - 35s - loss: 2.0028 - Top-1 Accuracy: 0.4950 - Top-5 Accuracy: 0.7673 - val_loss: 2.4953 - val_Top-1 Accuracy: 0.4133 - val_Top-5 Accuracy: 0.6812 - lr: 1.0000e-04 - 35s/epoch - 44ms/step
+Epoch 30/100
+782/782 - 35s - loss: 2.0074 - Top-1 Accuracy: 0.4920 - Top-5 Accuracy: 0.7660 - val_loss: 2.4955 - val_Top-1 Accuracy: 0.4137 - val_Top-5 Accuracy: 0.6820 - lr: 1.0000e-05 - 35s/epoch - 45ms/step
+Epoch 31/100
+782/782 - 35s - loss: 1.9987 - Top-1 Accuracy: 0.4950 - Top-5 Accuracy: 0.7677 - val_loss: 2.4951 - val_Top-1 Accuracy: 0.4148 - val_Top-5 Accuracy: 0.6819 - lr: 1.0000e-05 - 35s/epoch - 44ms/step
+Epoch 32/100
+
+Epoch 32: ReduceLROnPlateau reducing learning rate to 9.99999883788405e-07.
+782/782 - 35s - loss: 2.0046 - Top-1 Accuracy: 0.4942 - Top-5 Accuracy: 0.7658 - val_loss: 2.4949 - val_Top-1 Accuracy: 0.4132 - val_Top-5 Accuracy: 0.6821 - lr: 1.0000e-05 - 35s/epoch - 45ms/step
+Epoch 33/100
+782/782 - 35s - loss: 2.0088 - Top-1 Accuracy: 0.4935 - Top-5 Accuracy: 0.7657 - val_loss: 2.4950 - val_Top-1 Accuracy: 0.4135 - val_Top-5 Accuracy: 0.6822 - lr: 1.0000e-06 - 35s/epoch - 44ms/step
+Epoch 33: early stopping
+Found 100000 files belonging to 200 classes.
+Found 10000 files belonging to 200 classes.
+Model: "model_4"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_5 (InputLayer)        [(None, 48, 48, 3)]       0         
+                                                                 
+ conv2d_56 (Conv2D)          (None, 23, 23, 24)        672       
+                                                                 
+ batch_normalization_160 (B  (None, 23, 23, 24)        96        
+ atchNormalization)                                              
+                                                                 
+ activation_56 (Activation)  (None, 23, 23, 24)        0         
+                                                                 
+ linear_bottleneck_block_52  (None, 12, 12, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_53  (None, 12, 12, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_54  (None, 12, 12, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_55  (None, 12, 12, 24)        1368      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_56  (None, 6, 6, 96)          4464      
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_57  (None, 6, 6, 96)          12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_58  (None, 6, 6, 96)          12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_59  (None, 6, 6, 96)          12384     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_60  (None, 3, 3, 168)         20664     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_61  (None, 3, 3, 168)         33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_62  (None, 3, 3, 168)         33768     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_63  (None, 2, 2, 192)         38256     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ linear_bottleneck_block_64  (None, 2, 2, 384)         83712     
+  (LinearBottleneckBlock)                                        
+                                                                 
+ global_average_pooling2d_4  (None, 384)               0         
+  (GlobalAveragePooling2D)                                       
+                                                                 
+ dropout_4 (Dropout)         (None, 384)               0         
+                                                                 
+ dense_4 (Dense)             (None, 200)               77000     
+                                                                 
+=================================================================
+Total params: 335024 (1.28 MB)
+Trainable params: 326336 (1.24 MB)
+Non-trainable params: 8688 (33.94 KB)
+_________________________________________________________________
+Epoch 1/100
+782/782 - 41s - loss: 2.9239 - Top-1 Accuracy: 0.3157 - Top-5 Accuracy: 0.5949 - val_loss: 3.0833 - val_Top-1 Accuracy: 0.2903 - val_Top-5 Accuracy: 0.5588 - lr: 0.1000 - 41s/epoch - 52ms/step
+Epoch 2/100
+782/782 - 28s - loss: 2.8116 - Top-1 Accuracy: 0.3360 - Top-5 Accuracy: 0.6167 - val_loss: 3.1613 - val_Top-1 Accuracy: 0.2864 - val_Top-5 Accuracy: 0.5475 - lr: 0.1000 - 28s/epoch - 36ms/step
+Epoch 3/100
+782/782 - 29s - loss: 2.7541 - Top-1 Accuracy: 0.3453 - Top-5 Accuracy: 0.6271 - val_loss: 3.3047 - val_Top-1 Accuracy: 0.2603 - val_Top-5 Accuracy: 0.5259 - lr: 0.1000 - 29s/epoch - 37ms/step
+Epoch 4/100
+782/782 - 28s - loss: 2.7189 - Top-1 Accuracy: 0.3522 - Top-5 Accuracy: 0.6352 - val_loss: 3.0753 - val_Top-1 Accuracy: 0.2991 - val_Top-5 Accuracy: 0.5645 - lr: 0.1000 - 28s/epoch - 36ms/step
+Epoch 5/100
+782/782 - 28s - loss: 2.6800 - Top-1 Accuracy: 0.3603 - Top-5 Accuracy: 0.6425 - val_loss: 2.9775 - val_Top-1 Accuracy: 0.3116 - val_Top-5 Accuracy: 0.5821 - lr: 0.1000 - 28s/epoch - 36ms/step
+Epoch 6/100
+782/782 - 28s - loss: 2.6571 - Top-1 Accuracy: 0.3633 - Top-5 Accuracy: 0.6477 - val_loss: 3.0973 - val_Top-1 Accuracy: 0.2962 - val_Top-5 Accuracy: 0.5668 - lr: 0.1000 - 28s/epoch - 36ms/step
+Epoch 7/100
+782/782 - 28s - loss: 2.6230 - Top-1 Accuracy: 0.3693 - Top-5 Accuracy: 0.6526 - val_loss: 3.2702 - val_Top-1 Accuracy: 0.2668 - val_Top-5 Accuracy: 0.5270 - lr: 0.1000 - 28s/epoch - 36ms/step
+Epoch 8/100
+
+Epoch 8: ReduceLROnPlateau reducing learning rate to 0.010000000149011612.
+782/782 - 28s - loss: 2.5967 - Top-1 Accuracy: 0.3743 - Top-5 Accuracy: 0.6588 - val_loss: 3.0955 - val_Top-1 Accuracy: 0.2974 - val_Top-5 Accuracy: 0.5627 - lr: 0.1000 - 28s/epoch - 36ms/step
+Epoch 9/100
+782/782 - 28s - loss: 2.3983 - Top-1 Accuracy: 0.4135 - Top-5 Accuracy: 0.6951 - val_loss: 2.6912 - val_Top-1 Accuracy: 0.3736 - val_Top-5 Accuracy: 0.6432 - lr: 0.0100 - 28s/epoch - 36ms/step
+Epoch 10/100
+782/782 - 28s - loss: 2.3050 - Top-1 Accuracy: 0.4326 - Top-5 Accuracy: 0.7129 - val_loss: 2.6775 - val_Top-1 Accuracy: 0.3752 - val_Top-5 Accuracy: 0.6473 - lr: 0.0100 - 28s/epoch - 36ms/step
+Epoch 11/100
+782/782 - 28s - loss: 2.2791 - Top-1 Accuracy: 0.4372 - Top-5 Accuracy: 0.7150 - val_loss: 2.6885 - val_Top-1 Accuracy: 0.3749 - val_Top-5 Accuracy: 0.6433 - lr: 0.0100 - 28s/epoch - 36ms/step
+Epoch 12/100
+782/782 - 28s - loss: 2.2524 - Top-1 Accuracy: 0.4425 - Top-5 Accuracy: 0.7214 - val_loss: 2.6712 - val_Top-1 Accuracy: 0.3775 - val_Top-5 Accuracy: 0.6475 - lr: 0.0100 - 28s/epoch - 36ms/step
+Epoch 13/100
+782/782 - 28s - loss: 2.2373 - Top-1 Accuracy: 0.4448 - Top-5 Accuracy: 0.7250 - val_loss: 2.6926 - val_Top-1 Accuracy: 0.3744 - val_Top-5 Accuracy: 0.6459 - lr: 0.0100 - 28s/epoch - 36ms/step
+Epoch 14/100
+782/782 - 29s - loss: 2.2222 - Top-1 Accuracy: 0.4488 - Top-5 Accuracy: 0.7265 - val_loss: 2.6683 - val_Top-1 Accuracy: 0.3749 - val_Top-5 Accuracy: 0.6525 - lr: 0.0100 - 29s/epoch - 37ms/step
+Epoch 15/100
+782/782 - 28s - loss: 2.2113 - Top-1 Accuracy: 0.4508 - Top-5 Accuracy: 0.7292 - val_loss: 2.6691 - val_Top-1 Accuracy: 0.3781 - val_Top-5 Accuracy: 0.6520 - lr: 0.0100 - 28s/epoch - 36ms/step
+Epoch 16/100
+782/782 - 28s - loss: 2.2011 - Top-1 Accuracy: 0.4518 - Top-5 Accuracy: 0.7306 - val_loss: 2.6762 - val_Top-1 Accuracy: 0.3765 - val_Top-5 Accuracy: 0.6495 - lr: 0.0100 - 28s/epoch - 36ms/step
+Epoch 17/100
+
+Epoch 17: ReduceLROnPlateau reducing learning rate to 0.0009999999776482583.
+782/782 - 29s - loss: 2.1937 - Top-1 Accuracy: 0.4544 - Top-5 Accuracy: 0.7330 - val_loss: 2.6760 - val_Top-1 Accuracy: 0.3756 - val_Top-5 Accuracy: 0.6482 - lr: 0.0100 - 29s/epoch - 37ms/step
+Epoch 18/100
+782/782 - 28s - loss: 2.1590 - Top-1 Accuracy: 0.4614 - Top-5 Accuracy: 0.7385 - val_loss: 2.6531 - val_Top-1 Accuracy: 0.3814 - val_Top-5 Accuracy: 0.6537 - lr: 1.0000e-03 - 28s/epoch - 36ms/step
+Epoch 19/100
+782/782 - 28s - loss: 2.1515 - Top-1 Accuracy: 0.4647 - Top-5 Accuracy: 0.7405 - val_loss: 2.6533 - val_Top-1 Accuracy: 0.3817 - val_Top-5 Accuracy: 0.6539 - lr: 1.0000e-03 - 28s/epoch - 36ms/step
+Epoch 20/100
+782/782 - 28s - loss: 2.1480 - Top-1 Accuracy: 0.4624 - Top-5 Accuracy: 0.7402 - val_loss: 2.6526 - val_Top-1 Accuracy: 0.3810 - val_Top-5 Accuracy: 0.6548 - lr: 1.0000e-03 - 28s/epoch - 36ms/step
+Epoch 21/100
+782/782 - 28s - loss: 2.1389 - Top-1 Accuracy: 0.4644 - Top-5 Accuracy: 0.7428 - val_loss: 2.6534 - val_Top-1 Accuracy: 0.3812 - val_Top-5 Accuracy: 0.6537 - lr: 1.0000e-03 - 28s/epoch - 36ms/step
+Epoch 22/100
+782/782 - 29s - loss: 2.1428 - Top-1 Accuracy: 0.4635 - Top-5 Accuracy: 0.7413 - val_loss: 2.6539 - val_Top-1 Accuracy: 0.3809 - val_Top-5 Accuracy: 0.6521 - lr: 1.0000e-03 - 29s/epoch - 37ms/step
+Epoch 23/100
+
+Epoch 23: ReduceLROnPlateau reducing learning rate to 9.999999310821295e-05.
+782/782 - 28s - loss: 2.1369 - Top-1 Accuracy: 0.4638 - Top-5 Accuracy: 0.7435 - val_loss: 2.6538 - val_Top-1 Accuracy: 0.3815 - val_Top-5 Accuracy: 0.6540 - lr: 1.0000e-03 - 28s/epoch - 36ms/step
+Epoch 24/100
+782/782 - 28s - loss: 2.1344 - Top-1 Accuracy: 0.4651 - Top-5 Accuracy: 0.7432 - val_loss: 2.6549 - val_Top-1 Accuracy: 0.3812 - val_Top-5 Accuracy: 0.6541 - lr: 1.0000e-04 - 28s/epoch - 36ms/step
+Epoch 25/100
+782/782 - 28s - loss: 2.1329 - Top-1 Accuracy: 0.4675 - Top-5 Accuracy: 0.7443 - val_loss: 2.6540 - val_Top-1 Accuracy: 0.3812 - val_Top-5 Accuracy: 0.6545 - lr: 1.0000e-04 - 28s/epoch - 36ms/step
+Epoch 26/100
+
+Epoch 26: ReduceLROnPlateau reducing learning rate to 9.999999019782991e-06.
+782/782 - 28s - loss: 2.1344 - Top-1 Accuracy: 0.4667 - Top-5 Accuracy: 0.7433 - val_loss: 2.6541 - val_Top-1 Accuracy: 0.3809 - val_Top-5 Accuracy: 0.6545 - lr: 1.0000e-04 - 28s/epoch - 36ms/step
+Epoch 27/100
+782/782 - 28s - loss: 2.1343 - Top-1 Accuracy: 0.4669 - Top-5 Accuracy: 0.7440 - val_loss: 2.6542 - val_Top-1 Accuracy: 0.3808 - val_Top-5 Accuracy: 0.6548 - lr: 1.0000e-05 - 28s/epoch - 36ms/step
+Epoch 28/100
+782/782 - 29s - loss: 2.1348 - Top-1 Accuracy: 0.4665 - Top-5 Accuracy: 0.7431 - val_loss: 2.6545 - val_Top-1 Accuracy: 0.3806 - val_Top-5 Accuracy: 0.6543 - lr: 1.0000e-05 - 29s/epoch - 37ms/step
+Epoch 29/100
+
+Epoch 29: ReduceLROnPlateau reducing learning rate to 9.99999883788405e-07.
+782/782 - 28s - loss: 2.1315 - Top-1 Accuracy: 0.4656 - Top-5 Accuracy: 0.7433 - val_loss: 2.6541 - val_Top-1 Accuracy: 0.3811 - val_Top-5 Accuracy: 0.6537 - lr: 1.0000e-05 - 28s/epoch - 36ms/step
+Epoch 30/100
+782/782 - 28s - loss: 2.1342 - Top-1 Accuracy: 0.4666 - Top-5 Accuracy: 0.7427 - val_loss: 2.6541 - val_Top-1 Accuracy: 0.3807 - val_Top-5 Accuracy: 0.6542 - lr: 1.0000e-06 - 28s/epoch - 36ms/step
+Epoch 30: early stopping
+Found 100000 files belonging to 200 classes.
+Found 10000 files belonging to 200 classes.
+79/79 - 1s - loss: 2.6541 - Top-1 Accuracy: 0.3807 - Top-5 Accuracy: 0.6542 - 661ms/epoch - 8ms/step
+
+
+2024-04-14 19:46:08.951094: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2024-04-14 19:46:08.951125: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2024-04-14 19:46:08.952219: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-04-14 19:46:08.958301: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-04-14 19:46:09.723306: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-04-14 19:46:10.393247: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 19:46:10.427617: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 19:46:10.427857: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+Num GPUs Available:  1
+Found 100000 files belonging to 200 classes.
+2024-04-14 19:46:14.192640: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 19:46:14.192912: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 19:46:14.193117: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 19:46:14.295311: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 19:46:14.295751: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 19:46:14.295975: I external/local_xla/xla/stream_executor/cuda/cuda_executor.cc:901] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2024-04-14 19:46:14.296126: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1929] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5484 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1060 6GB, pci bus id: 0000:01:00.0, compute capability: 6.1
+Found 10000 files belonging to 200 classes.
+2024-04-14 19:46:26.336653: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:378] Ignored output_format.
+2024-04-14 19:46:26.336683: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:381] Ignored drop_control_dependency.
+2024-04-14 19:46:26.337034: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: etinynet_48
+2024-04-14 19:46:26.363637: I tensorflow/cc/saved_model/reader.cc:51] Reading meta graph with tags { serve }
+2024-04-14 19:46:26.363668: I tensorflow/cc/saved_model/reader.cc:146] Reading SavedModel debug info (if present) from: etinynet_48
+2024-04-14 19:46:26.416140: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
+2024-04-14 19:46:26.435651: I tensorflow/cc/saved_model/loader.cc:233] Restoring SavedModel bundle.
+2024-04-14 19:46:27.009454: I tensorflow/cc/saved_model/loader.cc:217] Running initialization op on SavedModel bundle at path: etinynet_48
+2024-04-14 19:46:27.190723: I tensorflow/cc/saved_model/loader.cc:316] SavedModel load for tags { serve }; Status: success: OK. Took 853690 microseconds.
+2024-04-14 19:46:27.328162: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+Summary on the non-converted ops:
+---------------------------------
+ * Accepted dialects: tfl, builtin, func
+ * Non-Converted Ops: 83, Total Ops 128, % non-converted = 64.84 %
+ * 83 ARITH ops
+
+- arith.constant:   83 occurrences  (f32: 82, i32: 1)
+
+
+
+  (f32: 14)
+  (f32: 26)
+  (f32: 1)
+  (f32: 1)
+1291.4375
+2024-04-14 19:46:31.501010: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:378] Ignored output_format.
+2024-04-14 19:46:31.501036: W tensorflow/compiler/mlir/lite/python/tf_tfl_flatbuffer_helpers.cc:381] Ignored drop_control_dependency.
+2024-04-14 19:46:31.501233: I tensorflow/cc/saved_model/reader.cc:83] Reading SavedModel from: etinynet_48
+2024-04-14 19:46:31.527453: I tensorflow/cc/saved_model/reader.cc:51] Reading meta graph with tags { serve }
+2024-04-14 19:46:31.527486: I tensorflow/cc/saved_model/reader.cc:146] Reading SavedModel debug info (if present) from: etinynet_48
+2024-04-14 19:46:31.596322: I tensorflow/cc/saved_model/loader.cc:233] Restoring SavedModel bundle.
+2024-04-14 19:46:32.172874: I tensorflow/cc/saved_model/loader.cc:217] Running initialization op on SavedModel bundle at path: etinynet_48
+2024-04-14 19:46:32.358771: I tensorflow/cc/saved_model/loader.cc:316] SavedModel load for tags { serve }; Status: success: OK. Took 857538 microseconds.
+Summary on the non-converted ops:
+---------------------------------
+ * Accepted dialects: tfl, builtin, func
+ * Non-Converted Ops: 83, Total Ops 128, % non-converted = 64.84 %
+ * 83 ARITH ops
+
+- arith.constant:   83 occurrences  (f32: 82, i32: 1)
+
+
+
+  (f32: 14)
+  (f32: 26)
+  (f32: 1)
+  (f32: 1)
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+479.328125
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Top-1 Accuracy: 0.3691
+Top-5 Accuracy: 0.6504
