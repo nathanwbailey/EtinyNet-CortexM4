@@ -112,13 +112,12 @@ def train_model_input_size(spatial_image_size: tuple[int], input_model: keras.Mo
 
 input_tuples = [(224, 224), (112, 112), (96, 96), (64, 64), (48, 48)]
 
-# model = None
-# for idx, input_tuple in enumerate(input_tuples):
-#     model = train_model_input_size(input_tuple, input_model=model)
+model = None
+for idx, input_tuple in enumerate(input_tuples):
+    model = train_model_input_size(input_tuple, input_model=model)
 
 final_image_size = (48,48)
 train_dataset_final, valid_dataset_final, normalized_train_dataset_data = create_dataset(batch_size=BATCH_SIZE, image_size=final_image_size)
-
 
 # ----------------------- #
 # -- Convert to TFLite -- #
