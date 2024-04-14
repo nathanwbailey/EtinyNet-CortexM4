@@ -18,7 +18,7 @@ TfLiteTensor *output = nullptr;
 //Set Tensor Arena Size to 6KB
 //This is done by looking at the Tensor Arena Size after creating the interpreter
 //Additionally this can be found out using Edge Impluse
-constexpr int tensor_arena_size = 150000;
+constexpr int tensor_arena_size = 63000;
 uint8_t* tensor_arena;
 
 //Quantization parameters
@@ -80,7 +80,7 @@ void loop() {
   //Get the value of each output, dequantize it to find the probability
   //Max probability index gives our predicted class which we print out
   int8_t* out_val = tflite::GetTensorData<int8_t>(output);
-	for (int32_t ix = 0; ix <= 10; ix++) {
+	for (int32_t ix = 0; ix <= 200; ix++) {
     int8_t o_val = out_val[ix];
 		float pb = ((float) o_val-o_zero_point) * o_scale;
 		if (pb > pb_max) {
@@ -89,5 +89,6 @@ void loop() {
 		}
 	}
   Serial.println(ix_max);
+  
   while(1);
 }
