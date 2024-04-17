@@ -18,7 +18,7 @@ TfLiteTensor *output = nullptr;
 //Set Tensor Arena Size to 6KB
 //This is done by looking at the Tensor Arena Size after creating the interpreter
 //Additionally this can be found out using Edge Impluse
-constexpr int tensor_arena_size = 150000;
+constexpr int tensor_arena_size = 63000;
 uint8_t* tensor_arena;
 
 //Quantization parameters
