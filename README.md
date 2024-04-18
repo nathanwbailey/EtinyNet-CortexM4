@@ -10,7 +10,9 @@ The accuarcy_increase_trial branch steps down the input size of the training dat
 
 ### Blogs
 
+In addition to the code, I wrote a blog on this project that can be found here:
 
+https://nathanbaileyw.medium.com/finding-the-limits-of-tinyml-deploying-etinynet-on-a-cortex-m4-32b3a4d21414
 
 ### Where is the code?
 
