@@ -825,5 +825,5 @@ Summary on the non-converted ops:
 fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
 479.328125
 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
-Top-1 Accuracy: 0.3691
-Top-5 Accuracy: 0.6504
+Top-1Accuracy: 0.3691
+Top-5Accuracy: 0.6504
