@@ -6,6 +6,8 @@ This project implements the EtinyNet-0.75 CNN (https://ojs.aaai.org/index.php/AA
 
 This is implemented in Keras and then converted to TFLite. Then it is deployed using TfLite-Micro on an Arduino Nano 33 BLE Sense Rev 2 which has a Cortex-M4F Microcontroller.
 
+The accuarcy_increase_trial branch steps down the input size of the training data from 224x224 to 48x48 in small increments to achieve better accuracy that just training on a smaller image size from the start
+
 ### Blogs
 
 
