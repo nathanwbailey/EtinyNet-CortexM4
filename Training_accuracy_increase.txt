@@ -753,7 +753,7 @@ Epoch 30/100
 Epoch 30: early stopping
 Found 100000 files belonging to 200 classes.
 Found 10000 files belonging to 200 classes.
-79/79 - 1s - loss: 2.6541 - Top-1 Accuracy: 0.3807 - Top-5 Accuracy: 0.6542 - 661ms/epoch - 8ms/step
+79/79 - 1s - loss: 2.6541 - Top-1Accuracy: 0.3807 - Top-5Accuracy: 0.6542 - 661ms/epoch - 8ms/step
 
 
 2024-04-14 19:46:08.951094: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
