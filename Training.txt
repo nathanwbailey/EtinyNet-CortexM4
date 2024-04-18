@@ -303,5 +303,5 @@ fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inferen
 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
 1289.0859375
 476.921875
-Top-1 Accuracy: 0.2525
-Top-5 Accuracy: 0.5247
+Top-1Accuracy: 0.2525
+Top-5Accuracy: 0.5247
