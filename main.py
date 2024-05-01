@@ -55,7 +55,7 @@ def train_model(keras_model: keras.Model, learning_rate: float, t_dataset: keras
 
     optimizer = keras.optimizers.SGD(learning_rate=learning_rate, momentum=0.9, weight_decay=1e-4)
 
-    keras_model.compile(optimizer=optimizer, loss={"output_1": loss_function_label, "output_2": loss_function_softmax}, metrics={'output_1': [keras.metrics.SparseCategoricalAccuracy(name='Top-1 Accuracy'), keras.metrics.SparseTopKCategoricalAccuracy(k=5, name='Top-5 Accuracy')]})
+    keras_model.compile(optimizer=optimizer, loss={"output_1": loss_function_label, "output_2": loss_function_softmax}, loss_weights={"output_1": 1, "output_2": 1}, metrics={'output_1': [keras.metrics.SparseCategoricalAccuracy(name='Top-1 Accuracy'), keras.metrics.SparseTopKCategoricalAccuracy(k=5, name='Top-5 Accuracy')]})
 
     lr_scheduler = keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, verbose=1, min_lr=1e-7, min_delta=1e-4)
     early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss', verbose=1, patience=10)
