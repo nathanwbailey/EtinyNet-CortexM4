@@ -6,6 +6,7 @@ from typing import Literal
 from typing import Any
 from skimage.io import imread
 from PIL import Image
+from sklearn.utils import shuffle
 
 
 class TinyImageNetDataset(keras.utils.Sequence):
@@ -21,6 +22,7 @@ class TinyImageNetDataset(keras.utils.Sequence):
             self.names.append(dataset_path+'/'+dataset_type+'/'+item.attrib['imageName'])
             self.labels.append(int(item.attrib['label']))
         self.transforms = transforms
+        self.names, self.labels = shuffle(self.names, self.labels, random_state=20)
 
     def __len__(self):
         return math.ceil(len(self.names) / self.batch_size)

@@ -7,6 +7,7 @@ from typing import Literal
 from typing import Any
 from PIL import Image
 from ast import literal_eval
+from sklearn.utils import shuffle
 
 
 class TinyImageNetDataset(keras.utils.Sequence):
@@ -27,6 +28,7 @@ class TinyImageNetDataset(keras.utils.Sequence):
         for item in xml_root_softmax.findall('Items/Item'):
             self.softmax.append(tf.constant(literal_eval(item.attrib['label']), dtype=tf.float32))
         self.transforms = transforms
+        self.names, self.labels, self.softmax = shuffle(self.names, self.labels, self.softmax, random_state=20)
 
     def __len__(self):
         return math.ceil(len(self.names) / self.batch_size)

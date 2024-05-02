@@ -9,12 +9,14 @@ from dataset_student_teacher import TinyImageNetDataset
 import time
 from pathlib import Path
 
+BATCH_SIZE=128
+
 transforms = keras.Sequential([
     keras.layers.Resizing(224,224),
     keras.layers.Rescaling(1./255)
 ])
 
-train_dataset = TinyImageNetDataset(dataset_type='train', dataset_path='tiny-imagenet-200', batch_size=32, transforms=transforms)
+train_dataset = TinyImageNetDataset(dataset_type='train', dataset_path='tiny-imagenet-200', batch_size=BATCH_SIZE, transforms=transforms)
 
 # mean = tf.zeros(3)
 # variance = tf.zeros(3)
@@ -47,8 +49,8 @@ val_transforms = keras.Sequential([
     keras.layers.Normalization(mean=mean, variance=variance)
 ])
 
-train_dataset = TinyImageNetDataset(dataset_type='train', dataset_path='tiny-imagenet-200', batch_size=32, transforms=train_transforms)
-val_dataset = TinyImageNetDataset(dataset_type='val', dataset_path='tiny-imagenet-200', batch_size=32, transforms=val_transforms)
+train_dataset = TinyImageNetDataset(dataset_type='train', dataset_path='tiny-imagenet-200', batch_size=BATCH_SIZE, transforms=train_transforms)
+val_dataset = TinyImageNetDataset(dataset_type='val', dataset_path='tiny-imagenet-200', batch_size=BATCH_SIZE, transforms=val_transforms)
 
 print(type(train_dataset))
 

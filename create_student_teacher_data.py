@@ -35,7 +35,7 @@ val_transforms = keras.Sequential([
 train_dataset = TinyImageNetDataset(dataset_type='train', dataset_path='tiny-imagenet-200', batch_size=32, transforms=train_transforms)
 val_dataset = TinyImageNetDataset(dataset_type='val', dataset_path='tiny-imagenet-200', batch_size=32, transforms=val_transforms)
 
-model = keras.models.load_model('etinynet_224')
+model = keras.models.load_model('etinynet_224_student_teacher_baseline')
 
 mytree = ET.parse('tiny-imagenet-200/train/image_labels.xml')
 root = mytree.getroot()
