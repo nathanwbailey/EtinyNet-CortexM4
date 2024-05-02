@@ -1,4 +1,4 @@
-"""Main file for training/converting the model."""
+"""Main file for training the model."""
 import tensorflow as tf # type: ignore[import-untyped]
 from tensorflow import keras # type: ignore[reportAttributeAccessIssue,import-untyped] # pylint: disable=no-member,import-error,no-name-in-module
 from etinynet import create_etinynet_model
@@ -70,7 +70,7 @@ def create_dataset(batch_size: int, image_size: tuple[int]) -> tuple[keras.utils
 def train_model(keras_model: keras.Model, learning_rate: float, t_dataset: keras.utils.Sequence, v_dataset: keras.utils.Sequence, epochs: int) -> keras.Model:
     """Compile and train the model."""
     loss_function_label = keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-    loss_function_softmax = keras.losses.Huber(reduction='sum')
+    loss_function_softmax = keras.losses.Huber(reduction='sum_over_batch')
 
     optimizer = keras.optimizers.SGD(learning_rate=learning_rate, momentum=0.9, weight_decay=1e-4)
 
@@ -138,123 +138,3 @@ input_tuples = [(112, 112), (96, 96), (64, 64), (48, 48)]
 model = keras.models.load_model('etinynet_224_student_teacher_baseline')
 for idx, input_tuple in enumerate(input_tuples):
     model = train_model_input_size(input_tuple, input_model=model)
-
-
-final_image_size = (48,48)
-train_dataset_final, valid_dataset_final, train_dataset_normalized = create_dataset(batch_size=BATCH_SIZE, image_size=final_image_size)
-
-# ----------------------- #
-# -- Convert to TFLite -- #
-# ----------------------- #
-#FP32 Model
-converter = tf.lite.TFLiteConverter.from_saved_model('etinynet_48')
-tflite_model = converter.convert()
-with open("etinynet.tflite", "wb") as f:
-    f.write(tflite_model) # type: ignore[reportAttributeAccessIssue]
-
-tflite_model_kb_size = os.path.getsize("etinynet.tflite") / 1024
-print(tflite_model_kb_size)
-
-#INT8 Model
-def representative_dataset_function() -> Generator[list, None, None]:
-    """Create a representative dataset for TFLite Conversion."""
-    for input_value, _ in train_dataset_normalized:
-        i_value_fp32 = tf.cast(input_value, tf.float32)
-        yield [i_value_fp32]
-
-converter = tf.lite.TFLiteConverter.from_saved_model('etinynet_48')
-converter.representative_dataset = tf.lite.RepresentativeDataset(representative_dataset_function)
-converter.optimizations = [tf.lite.Optimize.DEFAULT] # type: ignore[reportAttributeAccessIssue]
-converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]
-converter.inference_input_type = tf.int8 # type: ignore[reportAttributeAccessIssue]
-converter.inference_output_type = tf.int8 # type: ignore[reportAttributeAccessIssue]
-
-
-tflite_model = converter.convert()
-with open("etinynet_int8.tflite", "wb") as f:
-    f.write(tflite_model) # type: ignore[reportAttributeAccessIssue]
-
-tflite_model_kb_size = os.path.getsize("etinynet_int8.tflite") / 1024
-print(tflite_model_kb_size)
-
-
-# --------------------------- #
-# -- Evaluate TFLite Model -- #
-# --------------------------- #
-tflite_interpreter = tf.lite.Interpreter(model_content = tflite_model)
-tflite_interpreter.allocate_tensors()
-
-input_details = tflite_interpreter.get_input_details()[0]
-output_details = tflite_interpreter.get_output_details()[0]
-
-input_quantization_details = input_details["quantization_parameters"]
-output_quantization_details = output_details["quantization_parameters"]
-input_quant_scale = input_quantization_details['scales'][0]
-output_quant_scale = output_quantization_details['scales'][0]
-input_quant_zero_point = input_quantization_details['zero_points'][0]
-output_quant_zero_point = output_quantization_details['zero_points'][0]
-
-def classify_sample_tflite(interpreter: tf.lite.Interpreter, input_d: dict, output_d: dict, i_scale: np.float32, o_scale: np.float32, i_zero_point: np.int32, o_zero_point: np.int32, input_data: tf.Tensor) -> tf.Tensor:
-    """Classify an example in TFLite."""
-    input_data = tf.reshape(input_data, (1,48,48,3))
-    input_fp32 = tf.cast(input_data, tf.float32)
-    input_int8 = tf.cast((input_fp32 / i_scale) + i_zero_point, tf.int8)
-    interpreter.set_tensor(input_d["index"], input_int8)
-    interpreter.invoke()
-    output_int8 = interpreter.get_tensor(output_d["index"])[0]
-    output_fp32 = tf.convert_to_tensor((output_int8 - o_zero_point) * o_scale, dtype=tf.float32)
-    return output_fp32
-
-num_correct_examples = 0
-num_examples = 0
-num_correct_examples_top_5 = 0
-for i_value, o_value in valid_dataset_final:
-    output = classify_sample_tflite(tflite_interpreter, input_details, output_details, input_quant_scale, output_quant_scale, input_quant_zero_point, output_quant_zero_point, i_value)
-    if tf.cast(tf.math.argmax(output), tf.int32) == o_value:
-        num_correct_examples += 1
-    if tf.math.in_top_k(tf.expand_dims(o_value, axis=0), tf.expand_dims(output, axis=0), 5).numpy()[0]:
-        num_correct_examples_top_5 += 1
-    num_examples += 1
-
-print(f'Top-1 Accuracy: {num_correct_examples/num_examples}')
-print(f'Top-5 Accuracy: {num_correct_examples_top_5/num_examples}')
-
-# ------------------------- #
-# -- Prepare for Arduino -- #
-# ------------------------- #
-def array_to_str(data: np.ndarray) -> str:
-    """Convert numpy array of int8 values to comma seperated int values."""
-    num_cols = 10
-    val_string = ''
-    for i, val in enumerate(data):
-        val_string += str(val)
-        if (i+1) < len(data):
-            val_string += ','
-        if (i+1) % num_cols == 0:
-            val_string += '\n'
-    return val_string
-
-def generate_h_file(size: int, data: str, label: str) -> str:
-    """Generate a c header with the string numpy data."""
-    str_out = 'int8_t g_test[] = '
-    str_out += '\n{\n'
-    str_out += f'{data}'
-    str_out += '};\n'
-    str_out += f'const int g_test_len = {size};\n'
-    str_out += f'const int g_test_label = {label};\n'
-    return str_out
-
-
-# filtered_valid_dataset = valid_dataset_final.filter(lambda _, y: y == 115)
-
-# c_code = ""
-# for i_value, o_value in filtered_valid_dataset:
-#     o_pred_fp32 = classify_sample_tflite(tflite_interpreter, input_details, output_details, input_quant_scale, output_quant_scale, input_quant_zero_point, output_quant_zero_point, i_value)
-#     if tf.cast(tf.math.argmax(o_pred_fp32), tf.int32) == o_value:
-#         i_value_int8 = tf.cast(((i_value / input_quant_scale) + input_quant_zero_point), tf.int8).numpy()
-#         i_value_int8 = i_value_int8.ravel()
-#         val_str = array_to_str(i_value_int8)
-#         c_code = generate_h_file(i_value_int8.size, val_str, "115")
-
-# with open('input_imagenet.h', 'w', encoding='utf-8') as file:
-#     file.write(c_code)
