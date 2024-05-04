@@ -70,11 +70,11 @@ def create_dataset(batch_size: int, image_size: tuple[int]) -> tuple[keras.utils
 def train_model(keras_model: keras.Model, learning_rate: float, t_dataset: keras.utils.Sequence, v_dataset: keras.utils.Sequence, epochs: int) -> keras.Model:
     """Compile and train the model."""
     loss_function_label = keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-    loss_function_softmax = keras.losses.Huber(reduction='sum_over_batch')
+    loss_function_softmax = keras.losses.Huber(reduction='sum')
 
     optimizer = keras.optimizers.SGD(learning_rate=learning_rate, momentum=0.9, weight_decay=1e-4)
 
-    keras_model.compile(optimizer=optimizer, loss={"output_1": loss_function_label, "output_2": loss_function_softmax}, loss_weights={"output_1": 1, "output_2": 3}, metrics={'output_1': [keras.metrics.SparseCategoricalAccuracy(name='Top-1 Accuracy'), keras.metrics.SparseTopKCategoricalAccuracy(k=5, name='Top-5 Accuracy')]})
+    keras_model.compile(optimizer=optimizer, loss={"output_1": loss_function_label, "output_2": loss_function_softmax}, loss_weights={"output_1": 1, "output_2": 30}, metrics={'output_1': [keras.metrics.SparseCategoricalAccuracy(name='Top-1 Accuracy'), keras.metrics.SparseTopKCategoricalAccuracy(k=5, name='Top-5 Accuracy')]})
 
     lr_scheduler = keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=3, verbose=1, min_lr=1e-7, min_delta=1e-4)
     early_stopping = keras.callbacks.EarlyStopping(monitor='val_loss', verbose=1, patience=10)
