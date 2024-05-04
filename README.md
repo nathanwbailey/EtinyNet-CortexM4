@@ -6,7 +6,7 @@ This project implements the EtinyNet-0.75 CNN (https://ojs.aaai.org/index.php/AA
 
 This is implemented in Keras and then converted to TFLite. Then it is deployed using TfLite-Micro on an Arduino Nano 33 BLE Sense Rev 2 which has a Cortex-M4F Microcontroller.
 
-This branch steps down the input size of the training data from 224x224 to 48x48 in small increments to achieve better accuracy that just training on a smaller image size from the start
+This branch steps down the input size of the training data from 224x224 to 48x48 in small increments to achieve better accuracy than just training on a smaller image size from the start
 
 ### Blogs
 
@@ -16,7 +16,7 @@ https://nathanbaileyw.medium.com/finding-the-limits-of-tinyml-deploying-etinynet
 
 ### Where is the code?
 
-* accuracy_increase_trial.py - Implements EtinyNet in Keras. Steps down the input size of the training data to achieve better accuracy that just training on a smaller image size from the start. Converts the model to tflite and outputs an image in a C header.
+* accuracy_increase_trial.py - Implements EtinyNet in Keras. Steps down the input size of the training data to achieve better accuracy than just training on a smaller image size from the start. Converts the model to tflite and outputs an image in a C header.
 * cortex_program/cortex_program.ino - Runs EtinyNet on the Cortex-M4F, classifies the example outputted in the python file.
 
 
@@ -27,7 +27,7 @@ All pip packages needed can be found in requirements.txt
 ### How to Run
 
 1. Download the dataset: http://cs231n.stanford.edu/tiny-imagenet-200.zip
-2. Extract the dataset and place in current working directory
+2. Extract the dataset and place in the current working directory
 3. Run the python file: python3 main.py
 4. Convert the tflite model to a C header:
     * apt-get install xxd
