@@ -20,7 +20,7 @@ https://nathanbaileyw.medium.com/finding-the-limits-of-tinyml-deploying-etinynet
 * dataset_student_teacher.py - Logic for the custom student-teacher Keras dataset
 * generate_xml_file.py - Creates an xml file to be used in the dataset (contains image file names + labels)
 * create_student_teacher_data.py - Runs the data through the network trained on the 224x224 input images and outputs the results to an xml file used in the dataset
-tempature_softmax_activation_layer.py - Custom tempature softmax activation layer used in the EtinyNet network
+temperature_softmax_activation_layer.py - Custom temperature softmax activation layer used in the EtinyNet network
 
 
 ### Requirements

@@ -5,14 +5,6 @@ import tensorflow as tf # type: ignore[import-untyped]
 from tensorflow import keras # type: ignore[reportAttributeAccessIssue,import-untyped] # pylint: disable=no-member,import-error,no-name-in-module
 from etinynet_blocks import LinearBottleneckBlock
 from etinynet_blocks import DenseLinearBottleneckBlock
-from tempature_softmax_activation_layer import TempatureSoftmaxActivationLayer
-
-def tempature_softmax_activation(tempature: float = 1.0):
-    """Softmax activation function with tempature."""
-    def tempature_softmax(logits: tf.Tensor):
-        """Tempature softmax function."""
-        return keras.activations.softmax(logits / tempature, axis=1)
-    return tempature_softmax
 
 
 #See the number of GPU devices

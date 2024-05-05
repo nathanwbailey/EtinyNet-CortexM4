@@ -5,14 +5,7 @@ import tensorflow as tf # type: ignore[import-untyped]
 from tensorflow import keras # type: ignore[reportAttributeAccessIssue,import-untyped] # pylint: disable=no-member,import-error,no-name-in-module
 from etinynet_blocks import LinearBottleneckBlock
 from etinynet_blocks import DenseLinearBottleneckBlock
-from tempature_softmax_activation_layer import TempatureSoftmaxActivationLayer
-
-def tempature_softmax_activation(tempature: float = 1.0):
-    """Softmax activation function with tempature."""
-    def tempature_softmax(logits: tf.Tensor):
-        """Tempature softmax function."""
-        return keras.activations.softmax(logits / tempature, axis=1)
-    return tempature_softmax
+from temperature_softmax_activation_layer import TemperatureSoftmaxActivationLayer
 
 
 #See the number of GPU devices
@@ -82,7 +75,7 @@ def create_etinynet_model(i_shape: tuple, block_info: list[dict], initial_in_cha
     out = keras.layers.GlobalAveragePooling2D()(out)
     out = keras.layers.Dropout(rate=0.4)(out)
     output_1 = keras.layers.Dense(units=output_units, name="output_1")(out)
-    output_2 = TempatureSoftmaxActivationLayer(tempature=2.0, name="output_2")(output_1)
+    output_2 = TemperatureSoftmaxActivationLayer(temperature=2.0, name="output_2")(output_1)
 
     model = keras.Model(inputs=input_data, outputs=[output_1, output_2])
 

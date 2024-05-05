@@ -4,9 +4,9 @@ from tensorflow import keras # type: ignore[reportAttributeAccessIssue,import-un
 from dataset import TinyImageNetDataset
 import xml.etree.ElementTree as ET
 
-def tempature_softmax(logits, tempature=1.0):
-    """Softmax activation function with tempature."""
-    return keras.activations.softmax(logits / tempature, axis=1)
+def temperature_softmax(logits, temperature=1.0):
+    """Softmax activation function with temperature."""
+    return keras.activations.softmax(logits / temperature, axis=1)
 
 mean = tf.constant([0.4802367, 0.44806668, 0.3975034])
 variance = tf.constant([0.06806142, 0.06479827, 0.06956852])
