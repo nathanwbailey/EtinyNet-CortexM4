@@ -6,21 +6,22 @@ This project implements the EtinyNet-0.75 CNN (https://ojs.aaai.org/index.php/AA
 
 This is implemented in Keras and then converted to TFLite. Then it is deployed using TfLite-Micro on an Arduino Nano 33 BLE Sense Rev 2 which has a Cortex-M4F Microcontroller.
 
-This branch trains a EtinyNet model using a student-teacher method and slowly steps down the input size of the training data from 224x224 to 48x48
+This branch trains an EtinyNet model using a student-teacher method and slowly steps down the input size of the training data from 224x224 to 48x48
 
 ### Blogs
 
 In addition to the code, I wrote two blogs on this project that can be found here:
 
 https://nathanbaileyw.medium.com/finding-the-limits-of-tinyml-deploying-etinynet-on-a-cortex-m4-32b3a4d21414
+
 https://nathanbaileyw.medium.com/deploying-etinynet-on-a-cortex-m4-student-teacher-methods-957c4be7825f
 
 ### Where is the code?
 
-* main.py - Implements EtinyNet in Keras. Steps down the input size of the training data using a student-teacher like method
+* main.py - Implements EtinyNet in Keras. Steps down the input size of the training data using a student-teacher-like method
 * dataset_student_teacher.py - Logic for the custom student-teacher Keras dataset
-* generate_xml_file.py - Creates an xml file to be used in the dataset (contains image file names + labels)
-* create_student_teacher_data.py - Runs the data through the network trained on the 224x224 input images and outputs the results to an xml file used in the dataset
+* generate_xml_file.py - Creates an XML file to be used in the dataset (contains image file names + labels)
+* create_student_teacher_data.py - Runs the data through the network trained on the 224x224 input images and outputs the results to an XML file used in the dataset
 temperature_softmax_activation_layer.py - Custom temperature softmax activation layer used in the EtinyNet network
 
 
