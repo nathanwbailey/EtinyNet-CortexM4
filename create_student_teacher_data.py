@@ -42,7 +42,7 @@ root = mytree.getroot()
 
 for idx, (data, labels) in enumerate(train_dataset):
     model_output = model.predict(data, verbose=0)
-    softmax_output = tempature_softmax(tf.convert_to_tensor(model_output), tempature=2)
+    softmax_output = temperature_softmax(tf.convert_to_tensor(model_output), temperature=2)
     numpy_softmax_output = softmax_output.numpy()
     for i in range(data.shape[0]):
         root[0][i+idx*32].attrib['label'] = str(list(numpy_softmax_output[i]))
@@ -55,7 +55,7 @@ root = mytree.getroot()
 
 for idx, (data, labels) in enumerate(val_dataset):
     model_output = model.predict(data, verbose=0)
-    softmax_output = tempature_softmax(tf.convert_to_tensor(model_output), tempature=2)
+    softmax_output = temperature_softmax(tf.convert_to_tensor(model_output), temperature=2)
     numpy_softmax_output = softmax_output.numpy()
     for i in range(data.shape[0]):
         root[0][i+idx*32].attrib['label'] = str(list(numpy_softmax_output[i]))
