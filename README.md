@@ -6,7 +6,7 @@ This project implements the EtinyNet-0.75 CNN (https://ojs.aaai.org/index.php/AA
 
 This is implemented in Keras and then converted to TFLite. Then it is deployed using TfLite-Micro on an Arduino Nano 33 BLE Sense Rev 2 which has a Cortex-M4F Microcontroller.
 
-This branch steps down the input size of the training data from 224x224 to 48x48 in small increments to achieve better accuracy that just training on a smaller image size from the start
+This branch trains a EtinyNet model using a student-teacher method and slowly steps down the input size of the training data from 224x224 to 48x48
 
 ### Blogs
 
@@ -16,8 +16,11 @@ https://nathanbaileyw.medium.com/finding-the-limits-of-tinyml-deploying-etinynet
 
 ### Where is the code?
 
-* accuracy_increase_trial.py - Implements EtinyNet in Keras. Steps down the input size of the training data to achieve better accuracy that just training on a smaller image size from the start. Converts the model to tflite and outputs an image in a C header.
-* cortex_program/cortex_program.ino - Runs EtinyNet on the Cortex-M4F, classifies the example outputted in the python file.
+* main.py - Implements EtinyNet in Keras. Steps down the input size of the training data using a student-teacher like method
+* dataset_student_teacher.py - Logic for the custom student-teacher Keras dataset
+* generate_xml_file.py - Creates an xml file to be used in the dataset (contains image file names + labels)
+* create_student_teacher_data.py - Runs the data through the network trained on the 224x224 input images and outputs the results to an xml file used in the dataset
+tempature_softmax_activation_layer.py - Custom tempature softmax activation layer used in the EtinyNet network
 
 
 ### Requirements
@@ -29,9 +32,3 @@ All pip packages needed can be found in requirements.txt
 1. Download the dataset: http://cs231n.stanford.edu/tiny-imagenet-200.zip
 2. Extract the dataset and place in current working directory
 3. Run the python file: python3 main.py
-4. Convert the tflite model to a C header:
-    * apt-get install xxd
-    * xxd -i etinynet_int8.tflite > model.h 
-    * sed -i 's/unsigned char/const unsigned char/g' model.h
-    * sed -i 's/const/alignas(8) const/g' model.h
-5. Run the arduino C file
