@@ -10,9 +10,10 @@ This branch trains a EtinyNet model using a student-teacher method and slowly st
 
 ### Blogs
 
-In addition to the code, I wrote a blog on this project that can be found here:
+In addition to the code, I wrote two blogs on this project that can be found here:
 
 https://nathanbaileyw.medium.com/finding-the-limits-of-tinyml-deploying-etinynet-on-a-cortex-m4-32b3a4d21414
+https://nathanbaileyw.medium.com/deploying-etinynet-on-a-cortex-m4-student-teacher-methods-957c4be7825f
 
 ### Where is the code?
 
