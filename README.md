@@ -15,6 +15,7 @@ The student_teacher branch steps down the input size of the training data from 2
 In addition to the code, I wrote two blogs on this project that can be found here:
 
 https://nathanbaileyw.medium.com/finding-the-limits-of-tinyml-deploying-etinynet-on-a-cortex-m4-32b3a4d21414
+
 https://nathanbaileyw.medium.com/deploying-etinynet-on-a-cortex-m4-student-teacher-methods-957c4be7825f
 
 ### Where is the code?
