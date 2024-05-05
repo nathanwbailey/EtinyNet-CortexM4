@@ -28,7 +28,7 @@ All pip packages needed can be found in requirements.txt
 
 1. Download the dataset: http://cs231n.stanford.edu/tiny-imagenet-200.zip
 2. Extract the dataset and place in the current working directory
-3. Run the python file: python3 main.py
+3. Run the python file: python3 accuracy_increase_trial.py
 4. Convert the tflite model to a C header:
     * apt-get install xxd
     * xxd -i etinynet_int8.tflite > model.h 
